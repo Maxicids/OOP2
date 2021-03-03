@@ -1,0 +1,14 @@
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\bin\Debug\Shop_Service.exe.config
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\bin\Debug\Shop_Service.exe
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\bin\Debug\Shop_Service.pdb
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.csprojAssemblyReference.cache
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\MainWindow.baml
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\MainWindow.g.cs
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\App.g.cs
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service_MarkupCompile.cache
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.g.resources
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.Properties.Resources.resources
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.csproj.GenerateResource.cache
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.csproj.CoreCompileInputs.cache
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.exe
+D:\Epam\OOP\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.pdb
