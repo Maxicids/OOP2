@@ -1,0 +1,1210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PearXLib</name>
+    </assembly>
+    <members>
+        <member name="T:PearXLib.PXL">
+            <summary>
+            PearXLib main class.
+            </summary>
+        </member>
+        <member name="M:PearXLib.PXL.CreateShortcut(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a shortcut.
+            </summary>
+            <param name="exec">Path to the executable file.</param>
+            <param name="args">Executable arguments</param>
+            <param name="shDir">Shortcut directory.</param>
+            <param name="shName">Shortcut name.</param>
+            <param name="genericName">Generic name. For example: if name is "Povar File Manager", generic name should be "File Manager".</param>
+            <param name="linuxIconPath">Path to the icon for a Linux desktop entry.</param>
+        </member>
+        <member name="M:PearXLib.PXL.GetArrayFromString(System.String)">
+            <summary>
+            Gets a string array from the string, uses new line(\n).
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:PearXLib.PXL.GetStringFromArray(System.String[])">
+            <summary>
+            Gets a string from the string array, uses new line(\n).
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:PearXLib.PXL.GetDateTimeNow">
+            <summary>
+            Gets an actual date and time.
+            </summary>
+            <returns>Actual date and time.</returns>
+        </member>
+        <member name="M:PearXLib.PXL.GetMd5(System.IO.Stream)">
+            <summary>
+            Gets a MD5 hash from the byte array.
+            </summary>
+            <param name="data">Input stream.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:PearXLib.PXL.GetMd5(System.Byte[])">
+            <summary>
+            Gets a MD5 hash from the byte array.
+            </summary>
+            <param name="data">Input byte array.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:PearXLib.PXL.GetMd5(System.String)">
+            <summary>
+            Gets a MD5 hash from the string.
+            </summary>
+            <param name="data">Input string</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:PearXLib.PXL.GetFileMd5(System.String)">
+            <summary>
+            Gets a file's MD5
+            </summary>
+            <returns>MD5 hash.</returns>
+            <param name="path">File path.</param>
+        </member>
+        <member name="M:PearXLib.PXL.GetSha256(System.String)">
+            <summary>
+            Gets a Sha256 hashsum from a text.
+            </summary>
+            <returns>Sha256 sum.</returns>
+            <param name="txt">Input text.</param>
+        </member>
+        <member name="M:PearXLib.PXL.AlignPoint(System.Drawing.ContentAlignment,System.Drawing.SizeF,System.Drawing.SizeF,System.Int32)">
+            <summary>
+            Gets the control point, based from align.
+            </summary>
+            <param name="align">The control's alignment.</param>
+            <param name="containerSize">The control's container size.</param>
+            <param name="size">The control's size.</param>
+            <param name="border">The border.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PearXLib.PXL.OpenUrl(System.String)">
+            <summary>
+            Opens a URL in a new thread.
+            </summary>
+            <param name="url">Url</param>
+        </member>
+        <member name="T:PearXLib.EmptyDelegate">
+            <summary>
+            An empty delegate. Special for you =).
+            </summary>
+        </member>
+        <member name="T:PearXLib.ListMode">
+            <summary>
+            List mode.
+            </summary>
+        </member>
+        <member name="F:PearXLib.ListMode.Whitelist">
+            <summary>
+            Whitelist.
+            </summary>
+        </member>
+        <member name="F:PearXLib.ListMode.Blacklist">
+            <summary>
+            Blacklist.
+            </summary>
+        </member>
+        <member name="T:PearXLib.D">
+            <summary>
+            Directories
+            </summary>
+        </member>
+        <member name="P:PearXLib.D.Documents">
+            <summary>
+            My documents directory.  On Windows - C:\Users\{USER}\Documents\, on Linux - /home/{USER}/
+            </summary>
+            <value>The documents directory path.</value>
+        </member>
+        <member name="P:PearXLib.D.AppData">
+            <summary>
+            Application Data directory. On Windows - C:\Users\{USER}\AppData\Roaming\, on Linux - /home/{USER}/.config/
+            </summary>
+            <value>The AppData path.</value>
+        </member>
+        <member name="P:PearXLib.D.Desktop">
+            <summary>
+            Desktop directory. On Windows - C:\Users\{USER}\Desktop, on Linux - /home/{USER}/Desktop
+            </summary>
+            <value>The desktop directory path.</value>
+        </member>
+        <member name="P:PearXLib.D.Home">
+            <summary>
+            User home directory.
+            </summary>
+        </member>
+        <member name="P:PearXLib.D.PearX">
+            <summary>
+            PearX Team's directory.
+            </summary>
+            <value>The PearX Team's directory path.</value>
+        </member>
+        <member name="T:PearXLib.FileUtils">
+            <summary>
+            PearXLib file utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.FileUtils.CanCreate(System.String)">
+            <summary>
+            Can system create file, named "filename"?
+            </summary>
+            <param name="filename">File's name.</param>
+            <returns>If system can create file, returns true, else returns false.</returns>
+        </member>
+        <member name="M:PearXLib.FileUtils.GetFilesInDir(System.String)">
+            <summary>
+            Gets all the files in the directory and subdirectories.
+            </summary>
+            <param name="dir">Path to the directory.</param>
+            <returns>All files in directory and subdirectories.</returns>
+        </member>
+        <member name="M:PearXLib.FileUtils.GetDirsInDir(System.String)">
+            <summary>
+            Gets all the directories in one directory.
+            </summary>
+            <returns>All the directories.</returns>
+            <param name="dir">Directory to search.</param>
+        </member>
+        <member name="M:PearXLib.FileUtils.CreateFileSymlink(System.String,System.String)">
+            <summary>
+            Creates a file symlink.
+            </summary>
+            <param name="file">File path.</param>
+            <param name="link">Symlink path.</param>
+        </member>
+        <member name="T:PearXLib.PcUtils">
+            <summary>
+            PearXLib Computer Utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.PcUtils.IsWindows">
+            <summary>
+            Is current OS - Windows
+            </summary>
+            <returns>If current OS is Windows, returns true.</returns>
+        </member>
+        <member name="M:PearXLib.PcUtils.RunExe(System.String,System.String)">
+            <summary>
+            Starts an executable file.
+            </summary>
+            <param name="path">Path to .exe</param>
+            <param name="args">Arguments.</param>
+        </member>
+        <member name="M:PearXLib.PcUtils.GetFromWindows(System.String)">
+            <summary>
+            Gets a Windows info. https://msdn.microsoft.com/en-us/library/windows/desktop/aa394239(v=vs.85).aspx - docs.
+            </summary>
+            <param name="what">Caption</param>
+            <returns>Result</returns>
+        </member>
+        <member name="M:PearXLib.PcUtils.GetJavaPath(System.Boolean)">
+            <summary>
+            Gets a path to the Java directory.
+            </summary>
+            <param name="javaw">Use javaw.exe instead of java.exe in Windows?</param>
+            <returns>A path to the Java folder.</returns>
+        </member>
+        <member name="M:PearXLib.PcUtils.GetRamInfo">
+            <summary>
+            Gets an information about PC's memory.
+            </summary>
+            <returns>An information about PC's memory.</returns>
+        </member>
+        <member name="M:PearXLib.PcUtils.GetCommandOutput(System.String,System.String)">
+            <summary>
+            Gets the output of the command.
+            </summary>
+            <returns>The command stdout.</returns>
+            <param name="cmd">Command name.</param>
+            <param name="args">Command arguments.</param>
+        </member>
+        <member name="T:PearXLib.RamInfo">
+            <summary>
+            Information about PC's memory.
+            </summary>
+        </member>
+        <member name="P:PearXLib.RamInfo.Used">
+            <summary>
+            Used memory.
+            </summary>
+        </member>
+        <member name="P:PearXLib.RamInfo.Available">
+            <summary>
+            Available memory.
+            </summary>
+        </member>
+        <member name="P:PearXLib.RamInfo.Total">
+            <summary>
+            Total memory.
+            </summary>
+        </member>
+        <member name="T:PearXLib.MemInfo">
+            <summary>
+            C# wrapper for GNU Linux's /proc/meminfo.
+            </summary>
+        </member>
+        <member name="M:PearXLib.MemInfo.Get(System.String)">
+            <summary>
+            Gets a meminfo parameter. For example "MemAvailable" or "MemTotal".
+            </summary>
+            <param name="what">Parameter name.</param>
+        </member>
+        <member name="T:PearXLib.Logging">
+            <summary>
+            PearXLib logging utilities.
+            </summary>
+        </member>
+        <member name="P:PearXLib.Logging.LogPath">
+            <summary>
+            Path to the log file.
+            </summary>
+        </member>
+        <member name="P:PearXLib.Logging.OutToConsole">
+            <summary>
+            Out this log to console?
+            </summary>
+        </member>
+        <member name="T:PearXLib.Logging.LogHandler">
+            <summary>
+            Log changed handler.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="logString">New log string</param>
+        </member>
+        <member name="E:PearXLib.Logging.LogChanged">
+            <summary>
+            Executes, when log changed.
+            </summary>
+        </member>
+        <member name="P:PearXLib.Logging.Log">
+            <summary>
+            Log string.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Logging.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new Logging component.
+            </summary>
+            <param name="logpath">Path to the log file.</param>
+            <param name="force">If true, removes old log file.</param>
+            <param name="outToConsole">Out this log to console?</param>
+        </member>
+        <member name="M:PearXLib.Logging.Add(System.String,PearXLib.LogType)">
+            <summary>
+            Adds a line to the log.
+            </summary>
+            <param name="line">Message text</param>
+            <param name="lt">Log type</param>
+        </member>
+        <member name="M:PearXLib.Logging.Add(System.String,System.String,PearXLib.LogType)">
+            <summary>
+            Adds a line to the log.
+            </summary>
+            <param name="line">Message text</param>
+            <param name="prefix">Message prefix.</param>
+            <param name="lt">Log type</param>
+        </member>
+        <member name="M:PearXLib.Logging.Add(System.String,System.String)">
+            <summary>
+            Adds a line to the log.
+            </summary>
+            <param name="line">Message text</param>
+            <param name="prefix">Message prefix.</param>
+        </member>
+        <member name="M:PearXLib.Logging.Add(System.String)">
+            <summary>
+            Adds a line to the log.
+            </summary>
+            <param name="line">Message text</param>
+        </member>
+        <member name="M:PearXLib.Logging.AddToLog(System.String,System.String)">
+            <summary>
+            Adds a string to the log file.
+            </summary>
+            <param name="line">Log line.</param>
+            <param name="prefix">Line prefix.</param>
+        </member>
+        <member name="T:PearXLib.LogType">
+            <summary>
+            Log type enum.
+            </summary>
+        </member>
+        <member name="F:PearXLib.LogType.Warning">
+            <summary>
+            Warning log string.
+            </summary>
+        </member>
+        <member name="F:PearXLib.LogType.Error">
+            <summary>
+            Error log string.
+            </summary>
+        </member>
+        <member name="F:PearXLib.LogType.Info">
+            <summary>
+            Info log string.
+            </summary>
+        </member>
+        <member name="F:PearXLib.LogType.Other">
+            <summary>
+            Other log string.
+            </summary>
+        </member>
+        <member name="F:PearXLib.LogType.Debug">
+            <summary>
+            Debug log string.
+            </summary>
+        </member>
+        <member name="T:PearXLib.RandomUtils">
+            <summary>
+            PearXLib random utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.RandomUtils.GenChar(System.Random,System.String)">
+            <summary>
+            Generates a random character.
+            </summary>
+            <returns>Random character.</returns>
+        </member>
+        <member name="M:PearXLib.RandomUtils.GenDigit(System.Random)">
+            <summary>
+            Generates a random digit.
+            </summary>
+            <returns>Random digit</returns>
+        </member>
+        <member name="M:PearXLib.RandomUtils.GenSymbol(System.Random)">
+            <summary>
+            Generates a random symbol.
+            </summary>
+            <param name="rand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PearXLib.RandomUtils.GenRandom(System.Random,System.Boolean)">
+            <summary>
+            Generates a random number/char/symbol.
+            </summary>
+            <param name="rand">Your random.</param>
+            <param name="useSymbols">Use Symbols?</param>
+            <returns>Random.</returns>
+        </member>
+        <member name="M:PearXLib.RandomUtils.ByTemplate(System.Random,System.String)">
+            <summary>
+            Generates a random string by the template.<para/>
+            Template usage:<para/>
+            %num% - a random figure, ex. 6 or 7.<para/>
+            %char% - a random character, ex. b or e.<para/>
+            %sym% - a random symbol, ex. ~ or +.<para/>
+            %rand% - a random symbol, character, or figure.<para/>
+            %randws% - a random character or figure.<para/>
+            Write in uppercase for uppercase :p.<para/>
+            Example template: q_%rand%%CHAR%%CHAR%%rand%_p. Example return: q_5FSg_p
+            </summary>
+            <param name="template">A template</param>
+            <param name="rand">Your random</param>
+            <returns>A random generated by template string.</returns>
+        </member>
+        <member name="M:PearXLib.RandomUtils.NextLong(System.Random,System.Int64,System.Int64)">
+            <summary>
+            Generates a random <see cref="T:System.Int64"/>.
+            </summary>
+            <returns>A random long.</returns>
+            <param name="rand">Your random</param>
+            <param name="max">Inclusive maximum value.</param>
+            <param name="min">Inclusive minimum value.</param>
+        </member>
+        <member name="M:PearXLib.RandomUtils.NextColor(System.Random,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Generates a random color.
+            </summary>
+            <returns>A random color..</returns>
+            <param name="rand">Your Random.</param>
+            <param name="maxR">Max Red.</param>
+            <param name="maxG">Max Green.</param>
+            <param name="maxB">Max Blue.</param>
+        </member>
+        <member name="T:PearXLib.SocialUtils">
+            <summary>
+            PearXLib Social Utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.SocialUtils.ShareVK(System.String)">
+            <summary>
+            Shares via VKontakte
+            </summary>
+            <param name="URL">URL.</param>
+        </member>
+        <member name="M:PearXLib.SocialUtils.ShareVK(System.String,System.String)">
+            <summary>
+            Shares via VKontakte
+            </summary>
+            <param name="URL">URL.</param>
+            <param name="title">Site title.</param>
+        </member>
+        <member name="M:PearXLib.SocialUtils.ShareVK(System.String,System.String,System.String)">
+            <summary>
+            Shares via VKontakte
+            </summary>
+            <param name="URL">URL.</param>
+            <param name="title">Site title.</param>
+            <param name="description">Site description.</param>
+        </member>
+        <member name="M:PearXLib.SocialUtils.ShareVK(System.String,System.String,System.String,System.String)">
+            <summary>
+            Shares via VKontakte
+            </summary>
+            <param name="URL">URL.</param>
+            <param name="title">Site title.</param>
+            <param name="description">Site description.</param>
+            <param name="URL_img">Site image.</param>
+        </member>
+        <member name="M:PearXLib.SocialUtils.ShareTwitter(System.String)">
+            <summary>
+            Shares via Twitter.
+            </summary>
+            <param name="text">Text.</param>
+        </member>
+        <member name="T:PearXLib.WebUtils">
+            <summary>
+            PearXLib Web Utilities
+            </summary>
+        </member>
+        <member name="M:PearXLib.WebUtils.SendRequest(System.String,System.String,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Sends a web request to the URL
+            </summary>
+            <param name="url">Endpoint URL</param>
+            <param name="method">Request method</param>
+            <param name="data">Content of the request. Use &amp; to split more than one parameters. ex: login=Developer&amp;password=123456789</param>
+            <param name="contentType">Content type of the request</param>
+            <param name="enc">Encoding of the request</param>
+            <returns>Web response</returns>
+        </member>
+        <member name="M:PearXLib.WebUtils.SendRequestText(System.String,System.String,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Sends a web request to the URL and returns only body of the response
+            </summary>
+            <param name="url">Endpoint URL</param>
+            <param name="method">Request method</param>
+            <param name="data">Content of the request. Use &amp; to split more than one parameters. ex: login=Developer&amp;password=123456789</param>
+            <param name="contentType">Content type of the request</param>
+            <param name="enc">Encoding of the request</param>
+            <returns>Web response body</returns>
+        </member>
+        <member name="M:PearXLib.WebUtils.SendGetRequest(System.String)">
+            <summary>
+            Sends a GET request.
+            </summary>
+            <returns>The response string.</returns>
+            <param name="url">URL.</param>
+        </member>
+        <member name="M:PearXLib.WebUtils.CheckForInternetConnection(System.String,System.Int32)">
+            <summary>
+            Checks for a Internet connectivity.
+            </summary>
+            <param name="url">A url for the connection check.</param>
+            <param name="port">A port for the connection check.</param>
+            <returns>True, if Internet connection is available, else returns false.</returns>
+        </member>
+        <member name="M:PearXLib.WebUtils.GetRedirectUrl(System.String)">
+            <summary>
+            Gets the redirect URL from URL.
+            </summary>
+            <returns>The redirect URL.</returns>
+            <param name="url">URL.</param>
+        </member>
+        <member name="M:PearXLib.WebUtils.DownloadImage(System.String)">
+            <summary>
+            Downloads an image from the Internet.
+            </summary>
+            <returns>Image.</returns>
+            <param name="url">Image URL.</param>
+        </member>
+        <member name="M:PearXLib.WebUtils.ParseUrlQuery(System.String)">
+            <summary>
+            Parses a string URL query to the Dictionary.
+            </summary>
+            <returns>The URL query.</returns>
+            <param name="query">Query.</param>
+        </member>
+        <member name="T:PearXLib.EncodingAlgorithms.PXInterference">
+            <summary>
+            PXInterference Algorithm. 
+            1. Add "n" random false chars.
+            2. Add true char.
+            3. Repeat.
+            Keys - interference count for every true char.
+            </summary>
+        </member>
+        <member name="M:PearXLib.EncodingAlgorithms.PXInterference.Encode(System.String,System.String,System.Int32,System.Random,System.Int32[]@)">
+            <summary>
+            Encodes string by a PXInterference algorithm.
+            </summary>
+            <param name="s">Input string.</param>
+            <param name="interference">False characters list (ex. "qwertyQWERTY123456")</param>
+            <param name="maxInterference">Max interference count per true character</param>
+            <param name="rand">Your random</param>
+            <param name="keys">Keys for decoding.</param>
+            <returns>Encoded string.</returns>
+        </member>
+        <member name="M:PearXLib.EncodingAlgorithms.PXInterference.Decode(System.String,System.Int32[])">
+            <summary>
+            Decodes string by a PXInterference algorithm.
+            </summary>
+            <param name="s">Encoded string</param>
+            <param name="keys">Keys for decoding</param>
+            <returns>Decoded string</returns>
+        </member>
+        <member name="T:PearXLib.EncodingAlgorithms.PXMultiple">
+            <summary>
+            PXMultiple Algorithm.
+            1. Convert char to integer.
+            2. Char * salt.
+            3. Repeat
+            </summary>
+        </member>
+        <member name="M:PearXLib.EncodingAlgorithms.PXMultiple.Encode(System.String,System.Int32)">
+            <summary>
+            Encodes string by algorithm "PXMultiple".
+            </summary>
+            <param name="input">Input string</param>
+            <param name="salt">Salt</param>
+            <returns>Encoded string</returns>
+        </member>
+        <member name="M:PearXLib.EncodingAlgorithms.PXMultiple.Decode(System.String,System.Int32)">
+            <summary>
+            Decodes string by algorithm "PXMultiple".
+            </summary>
+            <param name="input">Input string</param>
+            <param name="salt">Salt</param>
+            <returns>Decoded string</returns>
+        </member>
+        <member name="T:PearXLib.Extensions">
+            <summary>
+            PearXLib extensions.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Extensions.ToByteArray(System.Drawing.Bitmap,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Gets a byte array from Bitmap.
+            </summary>
+            <returns>A Bitmap byte array.</returns>
+            <param name="bmp">Bitmap.</param>
+            <param name="format">Image Format.</param>
+        </member>
+        <member name="M:PearXLib.Extensions.Contains(System.String,System.Char)">
+            <summary>
+            Is the string contains a character?
+            </summary>
+            <returns>If string contains a character, returns true.</returns>
+            <param name="s">Input string.</param>
+            <param name="c">Character.</param>
+        </member>
+        <member name="M:PearXLib.Extensions.ToJson(System.Object)">
+            <summary>
+            Formats an object to the JSON format.
+            </summary>
+            <returns>The JSON-formatted object.</returns>
+            <param name="obj">Input object.</param>
+        </member>
+        <member name="T:PearXLib.Wiki.WikiUtils">
+            <summary>
+            PearXLib's wiki utils.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Wiki.WikiUtils.GetSummary(System.String,System.String)">
+            <summary>
+            Gets the wiki page summary.
+            </summary>
+            <returns>The wiki page summary.</returns>
+            <param name="apiPhp">Wiki's API php.</param>
+            <param name="name">Page name.</param>
+        </member>
+        <member name="T:PearXLib.Alphabets">
+            <summary>
+            Alphabets.
+            </summary>
+        </member>
+        <member name="T:PearXLib.TextUtils">
+            <summary>
+            Text utilities from the PearXLib.
+            </summary>
+        </member>
+        <member name="M:PearXLib.TextUtils.ClearText(System.String,System.String,PearXLib.ListMode)">
+            <summary>
+            Clears the text.
+            </summary>
+            <returns>Cleared text.</returns>
+            <param name="s">Input string.</param>
+            <param name="listedChars">Whitelisted characters.</param>
+            <param name="mode">Whitelist/Blacklist mode.</param>
+        </member>
+        <member name="M:PearXLib.TextUtils.ReplaceFirst(System.String@,System.String,System.String)">
+            <summary>
+            Replaces a first occurrence in the string.
+            </summary>
+            <param name="str">Input string.</param>
+            <param name="replaceFrom">Replace from...</param>
+            <param name="replaceTo">Replace to...</param>
+        </member>
+        <member name="M:PearXLib.TextUtils.Turn(System.String)">
+            <summary>
+            Turns the specified string. If input is "abcd", output is "dcba"
+            </summary>
+            <param name="s">Input string.</param>
+        </member>
+        <member name="M:PearXLib.TextUtils.Substring(System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Int32)">
+            <summary>
+            Gets a substring of each array entry.
+            </summary>
+            <returns>The substring array.</returns>
+            <param name="list">Input list.</param>
+            <param name="from">Start substring from...</param>
+            <param name="length">Substring length.</param>
+        </member>
+        <member name="M:PearXLib.TextUtils.Repeat(System.String,System.Int32)">
+            <summary>
+            Repeat the specified text n times.
+            </summary>
+            <returns>The repeated text.</returns>
+            <param name="text">Text to repeat.</param>
+            <param name="times">How many times to repeat.</param>
+        </member>
+        <member name="T:PearXLib.Maths.MathUtils">
+            <summary>
+            PearXLib mathematics utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetAverage(System.Int32[])">
+            <summary>
+            Gets an arithmetical average.
+            </summary>
+            <param name="ints">Input integers.</param>
+            <returns>Arithmetical average.</returns>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetAverageExactly(System.Double[])">
+            <summary>
+            Gets an exactly arithmetical average.
+            </summary>
+            <param name="doubles">Input doubles.</param>
+            <returns>Exactly arithmetical average</returns>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetNumberOfNumbers(System.Int32)">
+            <summary>
+            Gets a number of numbers! (seriously)
+            </summary>
+            <param name="count">Number</param>
+            <returns>Number of numbers!</returns>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetInPercents(System.Double,System.Double)">
+            <summary>
+            Get a number in percents.
+            </summary>
+            <param name="maximum">100 percents.</param>
+            <param name="value">Value</param>
+            <returns>Value in percents.</returns>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetPointDistance(System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Gets the distance between two points.
+            </summary>
+            <returns>The distance between two points.</returns>
+            <param name="p1">First point.</param>
+            <param name="p2">Second point.</param>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.IsEven(System.Int64)">
+            <summary>
+            Is value even7
+            </summary>
+            <returns><c>true</c>, if value is even, <c>false</c> otherwise.</returns>
+            <param name="l">Value.</param>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetGcd(System.Int64[])">
+            <summary>
+            Gets a Greatest Common Divider. For more details, see <see cref="M:PearXLib.Maths.MathUtils.GetGcdEuclid(System.Int64,System.Int64)"/>.
+            </summary>
+            <returns>Greatest Common Divider.</returns>
+            <param name="vals">Numbers.</param>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.GetGcdEuclid(System.Int64,System.Int64)">
+            <summary>
+            Gets a Greatest Common Divider using the Euclid's algorithm.
+            </summary>
+            <returns>Greatest Common Divider.</returns>
+            <param name="a">First number.</param>
+            <param name="b">Second number.</param>
+        </member>
+        <member name="M:PearXLib.Maths.MathUtils.NearestPowerOf(System.Int32,System.Int32)">
+            <summary>
+            Gets the nearest to "val" value in power of "powerOf".
+            </summary>
+            <param name="val">Input integer.</param>
+            <param name="powerOf">Power of X</param>
+        </member>
+        <member name="T:PearXLib.Maths.Fraction">
+            <summary>
+            A fraction class.
+            </summary>
+        </member>
+        <member name="P:PearXLib.Maths.Fraction.Numerator">
+            <summary>
+            A numerator of the fraction.
+            </summary>
+        </member>
+        <member name="P:PearXLib.Maths.Fraction.Denominator">
+            <summary>
+            A denominator of the fraction.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Initializes a new fraction
+            </summary>
+            <param name="num">Numerator</param>
+            <param name="den">Denominator</param>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.op_Multiply(PearXLib.Maths.Fraction,PearXLib.Maths.Fraction)">
+            <summary>
+            *
+            </summary>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.op_Division(PearXLib.Maths.Fraction,PearXLib.Maths.Fraction)">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.Reduce">
+            <summary>
+            Reduces this fraction.
+            </summary>
+            <returns>The reduced fraction</returns>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.ToDouble">
+            <summary>
+            Converts a fraction to double.
+            </summary>
+            <returns>Double.</returns>
+        </member>
+        <member name="M:PearXLib.Maths.Fraction.ToFloat">
+            <summary>
+            Converts a fraction to float.
+            </summary>
+        </member>
+        <member name="T:PearXLib.Maths.PointSizeUtils">
+            <summary>
+            Utilities that can be associated with points, sizes and mathematics.
+            </summary>
+        </member>
+        <member name="M:PearXLib.Maths.PointSizeUtils.Divide(System.Drawing.Point,System.Drawing.SizeF)">
+            <summary>
+            Divide a point by a size.
+            </summary>
+            <param name="left">Divident.</param>
+            <param name="right">Divisor.</param>
+            <returns>Quotient.</returns>
+        </member>
+        <member name="M:PearXLib.Maths.PointSizeUtils.ToPoint(System.Drawing.PointF)">
+            <summary>
+            Converts a Point to PointF.
+            </summary>
+            <param name="p">Target point.</param>
+            <returns>Returned point.</returns>
+        </member>
+        <member name="M:PearXLib.Maths.PointSizeUtils.ToSize(System.Drawing.SizeF)">
+            <summary>
+            Converts a SizeF to Size.
+            </summary>
+            <param name="sz">Input size.</param>
+        </member>
+        <member name="M:PearXLib.Maths.PointSizeUtils.NearestPowerOf(System.Drawing.Size,System.Int32)">
+            <summary>
+            Gets the nearest to "sz" size in power of "powerOf".
+            </summary>
+            <param name="sz">Input size.</param>
+            <param name="powerOf">Power of X</param>
+        </member>
+        <member name="T:PearXLib.WebServices.Wolfram.Wolfram">
+            <summary>
+            PearXLib's Wolfram utilities.
+            </summary>
+        </member>
+        <member name="M:PearXLib.WebServices.Wolfram.Wolfram.Process(System.String,System.String)">
+            <summary>
+            Use Wolfram!
+            </summary>
+            <returns>Wolfram output.</returns>
+            <param name="input">Input string.</param>
+            <param name="appid">Wolfram AppID.</param>
+        </member>
+        <member name="T:PearXLib.WebServices.GoogleApis.GoogleImageSearch">
+            <summary>
+            Class for de-serialized Google Image Search response.
+            </summary>
+        </member>
+        <member name="T:PearXLib.WebServices.GoogleApis.GoogleShortener">
+            <summary>
+            A class for deserialized goo.gl response
+            </summary>
+        </member>
+        <member name="P:PearXLib.WebServices.GoogleApis.GoogleShortener.id">
+            <summary>
+            Short URL
+            </summary>
+        </member>
+        <member name="P:PearXLib.WebServices.GoogleApis.GoogleShortener.longUrl">
+            <summary>
+            Long URL
+            </summary>
+        </member>
+        <member name="T:PearXLib.WebServices.GoogleApis.GoogleUtils">
+            <summary>
+            PearXLib's Google API Utils.
+            </summary>
+        </member>
+        <member name="M:PearXLib.WebServices.GoogleApis.GoogleUtils.ShortURL(System.String,System.String)">
+            <summary>
+            Shorts an URL.
+            </summary>
+            <param name="url">Full URL</param>
+            <param name="apiKey">Google API Key</param>
+            <returns>Shorten URL in JSON format</returns>
+        </member>
+        <member name="M:PearXLib.WebServices.GoogleApis.GoogleUtils.SearchImages(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Search image in the Google.
+            </summary>
+            <returns>Response in JSON format.</returns>
+            <param name="query">Search query.</param>
+            <param name="apiKey">Google API key.</param>
+            <param name="searchID">Google Custom Search ID.</param>
+            <param name="start">Start search from $start entry.</param>
+        </member>
+        <member name="T:PearXLib.XWebClient">
+            <summary>
+            An upgraded webclient.
+            </summary>
+        </member>
+        <member name="E:PearXLib.XWebClient.ProgressChanged">
+            <summary>
+            Occurs when download progress changed.
+            </summary>
+        </member>
+        <member name="M:PearXLib.XWebClient.Dispose">
+            <summary>
+            Releases all resource used by the <see cref="T:PearXLib.XWebClient"/> object.
+            </summary>
+            <remarks>Call <see cref="M:PearXLib.XWebClient.Dispose"/> when you are finished using the <see cref="T:PearXLib.XWebClient"/>. The
+            <see cref="M:PearXLib.XWebClient.Dispose"/> method leaves the <see cref="T:PearXLib.XWebClient"/> in an unusable state. After calling
+            <see cref="M:PearXLib.XWebClient.Dispose"/>, you must release all references to the <see cref="T:PearXLib.XWebClient"/> so the garbage
+            collector can reclaim the memory that the <see cref="T:PearXLib.XWebClient"/> was occupying.</remarks>
+        </member>
+        <member name="M:PearXLib.XWebClient.DownloadFile(System.String,System.String,System.String,System.Text.Encoding,System.Int32)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="url">File URL.</param>
+            <param name="local">Local path.</param>
+            <param name="bufferSize">Buffer size.</param>
+            <param name="asyncEvents">If set to <c>true</c>, events should be async.</param>
+            <param name="post">POST data.</param>
+            <param name="enc">POST encoding.</param>
+        </member>
+        <member name="T:PearXLib.BytesRecievedEventArgs">
+            <summary>
+            Event arguments for downloading.
+            </summary>
+        </member>
+        <member name="M:PearXLib.BytesRecievedEventArgs.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PearXLib.BytesRecievedEventArgs"/> class.
+            </summary>
+            <param name="total">Total bytes to download.</param>
+            <param name="recieved">Recieved bytes.</param>
+        </member>
+        <member name="P:PearXLib.BytesRecievedEventArgs.Total">
+            <summary>
+            Total bytes to download.
+            </summary>
+        </member>
+        <member name="P:PearXLib.BytesRecievedEventArgs.Recieved">
+            <summary>
+            Recieved bytes.
+            </summary>
+        </member>
+        <member name="P:PearXLib.BytesRecievedEventArgs.InPercents">
+            <summary>
+            Recieved bytes in percents
+            </summary>
+            <value>The in percents.</value>
+        </member>
+        <member name="T:PearXLib.ResourceUtils">
+            <summary>
+            PearXLib Resource Utils
+            </summary>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.GetFromResources(System.String)">
+            <summary>
+            Gets a byte array from resources.
+            </summary>
+            <param name="name">Resource name. For example: "MyApp.Images.Cat.png".</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.StreamFromResources(System.String)">
+            <summary>
+            Gets a Stream from resources.
+            </summary>
+            <returns>The Stream.</returns>
+            <param name="name">Resource name. For example: "MyApp.Images.Cat.png".</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.GetResourcesInDomain(System.String)">
+            <summary>
+            Gets all the resources in domain.
+            </summary>
+            <returns>Resource names.</returns>
+            <param name="domain">Resource domain.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.ImageFromBytes(System.Byte[])">
+            <summary>
+            Gets an image from the bytes.
+            </summary>
+            <returns>An image.</returns>
+            <param name="bytes">Byte array.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.FontFromBytes(System.Byte[])">
+            <summary>
+            Converts a byte array to a font.
+            </summary>
+            <returns>Font.</returns>
+            <param name="bts">Byte array.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.IconFromBytes(System.Byte[])">
+            <summary>
+            Converts a byte array to an icon.
+            </summary>
+            <returns>An icon.</returns>
+            <param name="bts">Byte array.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.ImageFromResources(System.String)">
+            <summary>
+            Gets an image from resources.
+            </summary>
+            <param name="name">Resource name.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.IconFromResources(System.String)">
+            <summary>
+            Gets an icon from the resources.
+            </summary>
+            <returns>An icon.</returns>
+            <param name="name">Resource name.</param>
+        </member>
+        <member name="M:PearXLib.ResourceUtils.StringFromResources(System.String)">
+            <summary>
+            Gets a string from the resources.
+            </summary>
+            <param name="name">Resource name.</param>
+            <returns>A string</returns>
+        </member>
+        <member name="T:PearXLib.SqlUtils">
+            <summary>
+            PearXLib's SQLUtils.
+            </summary>
+        </member>
+        <member name="M:PearXLib.SqlUtils.EscapePrepared(System.String)">
+            <summary>
+            Escapes a prepared statement argument.
+            </summary>
+            <returns>Escaped preapred statement argument.</returns>
+            <param name="prep">Prepared statement argument.</param>
+        </member>
+        <member name="M:PearXLib.SqlUtils.ExecuteListRows(System.Data.Common.DbCommand,System.Boolean)">
+            <summary>
+            Executes a command and gets a list of rows.
+            </summary>
+            <returns>A list of rows.</returns>
+            <param name="cmd">Command.</param>
+            <param name="autoclose">Autoclose SQL connection after request?</param>
+        </member>
+        <member name="M:PearXLib.SqlUtils.ExecuteListColumns(System.Data.Common.DbCommand,System.Boolean)">
+            <summary>
+            Executes a command and gets a list of columns.
+            </summary>
+            <returns>A list of columns.</returns>
+            <param name="cmd">Command.</param>
+            <param name="autoclose">Autoclose SQL connection after request?</param>
+        </member>
+        <member name="M:PearXLib.SqlUtils.ExecuteSingleList(System.Data.Common.DbCommand,System.Boolean)">
+            <summary>
+            Executes a command and gets a single list.
+            </summary>
+            <returns>A single list.</returns>
+            <param name="cmd">Command.</param>
+            <param name="autoclose">Autoclose SQL connection after request?</param>
+        </member>
+        <member name="M:PearXLib.SqlUtils.ExecuteCount(System.Data.Common.DbCommand,System.Boolean)">
+            <summary>
+            Executes a count query.
+            </summary>
+            <returns>Count.</returns>
+            <param name="cmd">Command.</param>
+            <param name="autoclose">Autoclose SQL connection after request?</param>
+        </member>
+        <member name="T:PearXLib.I18n.I18nLoader">
+            <summary>
+            A base for I18n loaders.
+            </summary>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoader.Load(System.String)">
+            <summary>
+            Loads a language into the Dictionary.
+            </summary>
+            <returns>The key:localized dictionary.</returns>
+            <param name="lang">Language name.</param>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoader.ListLanguages">
+            <summary>
+            Gets a list of all the available languages.
+            </summary>
+            <returns>A language list.</returns>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoader.Contains(System.String)">
+            <summary>
+            Is this Loader contains specified language?
+            </summary>
+            <param name="name">Language name</param>
+        </member>
+        <member name="T:PearXLib.I18n.I18n">
+            <summary>
+            An internationalization system from PearXLib
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18n.DefaultLangName">
+            <summary>
+            The default language name.
+            </summary>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.#ctor(PearXLib.I18n.I18nLoader,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PearXLib.I18n.I18n"/> class.
+            </summary>
+            <param name="loader">An I18n Loader.</param>
+            <param name="def">Default language name.</param>
+        </member>
+        <member name="P:PearXLib.I18n.I18n.Item(System.String)">
+            <summary>
+            Gets localized string from an unlocalized key.
+            </summary>
+            <param name="key">An unlocalized name.</param>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.Load(System.String)">
+            <summary>
+            Loads the specified language.
+            </summary>
+            <param name="name">Language name.</param>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.Reload">
+            <summary>
+            Reloads the selected language.
+            </summary>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.ListLanguages">
+            <summary>
+            Gets a list of all the available languages.
+            </summary>
+            <returns>A language list.</returns>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.GetSystem">
+            <summary>
+            Gets a system language.
+            </summary>
+        </member>
+        <member name="M:PearXLib.I18n.I18n.ProcessString(System.String)">
+            <summary>
+            Gets a I18n pair from a line.
+            </summary>
+            <returns>An I18n pair.</returns>
+            <param name="line">Localization file line.</param>
+        </member>
+        <member name="T:PearXLib.I18n.I18nLang">
+            <summary>
+            I18n language.
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18nLang.Name">
+            <summary>
+            Language name. For example, en_US.
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18nLang.LangName">
+            <summary>
+            User readable language name. For example, "Russian".
+            </summary>
+        </member>
+        <member name="T:PearXLib.I18n.I18nLoaderResources">
+            <summary>
+            An I18n loader for loading from embedded resources.
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18nLoaderResources.ResourcesPath">
+            <summary>
+            The embedded resources domain. For example, "Game.Resources.Langs".
+            </summary>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoaderResources.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PearXLib.I18n.I18nLoaderResources"/> class.
+            </summary>
+            <param name="resPath">The embedded resources domain. For example, "Game.Resources.Langs".</param>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoaderResources.Load(System.String)">
+            <summary>
+            Loads a language into the Dictionary.
+            </summary>
+            <returns>The key:localized dictionary.</returns>
+            <param name="lang">Language name.</param>
+        </member>
+        <member name="M:PearXLib.I18n.I18nLoaderResources.ListLanguages">
+            <summary>
+            Gets a list of all the available languages.
+            </summary>
+            <returns>A language list.</returns>
+        </member>
+        <member name="T:PearXLib.I18n.I18nPage">
+            <summary>
+            An I18n language page.
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18nPage.Values">
+            <summary>
+            A key:localized pair.
+            </summary>
+        </member>
+        <member name="P:PearXLib.I18n.I18nPage.Name">
+            <summary>
+            The language name.
+            </summary>
+        </member>
+        <member name="T:PearXLib.MsgJson">
+            <summary>
+            Message + Json format, splitted by ":" character.
+            </summary>
+        </member>
+        <member name="P:PearXLib.MsgJson.Message">
+            <summary>
+            Message.
+            </summary>
+        </member>
+        <member name="P:PearXLib.MsgJson.Json">
+            <summary>
+            Json.
+            </summary>
+        </member>
+        <member name="M:PearXLib.MsgJson.Parse(System.String)">
+            <summary>
+            Parses a string to the MsgJson.
+            </summary>
+            <returns>MsgJson.</returns>
+            <param name="resp">Input string.</param>
+        </member>
+    </members>
+</doc>
