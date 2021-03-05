@@ -1,6 +1,6 @@
 ﻿namespace Shop_Service.ProductFactory
 {
-    public class SmartPhoneOrTablet : Electronics
+    public class Electronics : Product
     {
         
     }

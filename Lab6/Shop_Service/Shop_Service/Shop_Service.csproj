@@ -65,7 +65,11 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="ProductFactory\AbstructProductFactory.cs" />
+        <Compile Include="ProductFactory\Appliance.cs" />
         <Compile Include="ProductFactory\Category.cs" />
+        <Compile Include="ProductFactory\Electronics.cs" />
+        <Compile Include="ProductFactory\Laptop.cs" />
+        <Compile Include="ProductFactory\Peripherals.cs" />
         <Compile Include="ProductFactory\Product.cs" />
         <Compile Include="ProductFactory\SmartPhoneOrTablet.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">

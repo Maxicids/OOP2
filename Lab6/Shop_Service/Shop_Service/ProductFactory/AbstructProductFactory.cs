@@ -1,7 +1,8 @@
 ﻿namespace Shop_Service.ProductFactory
 {
-    public class AbstructProductFactory
+    public abstract class AbstractProductFactory
     {
-        
+        public abstract SmartPhoneOrTablet CreateSmartPhoneOrTablet(string name);
+
     }
 }
