@@ -51,7 +51,7 @@ namespace Lab2.Banking
                 list.Add(account);
             }
         }
-
+        
         public void Remove(BankAccount account)
         {
             list.Remove(account);
@@ -61,7 +61,7 @@ namespace Lab2.Banking
         #endregion
 
         #region Serialization
-        public void SerialData(int index = 0)//TODO:resultList
+        public void SerialData(int index = 0)
         {
             if (index == 0)
             {

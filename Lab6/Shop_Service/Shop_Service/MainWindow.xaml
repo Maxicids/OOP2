@@ -1,11 +1,111 @@
-﻿<Window x:Class="Shop_Service.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Shop_Service.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="MainIcon.png">
+    <Grid Background="White" DataContext="hello world" MouseDown="MainGrid_OnMouseDown">
+        <StackPanel>
+            <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="1024">
+                <Button Padding="0" Margin="999,0,0,0" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonOff_OnClick">
+                    <materialDesign:PackIcon Kind="Close" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Margin="949,0,0,0" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonMinimize_OnClick">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Foreground="Gray"/>
+                </Button>
+            </Grid>
+            <Grid Background="#cff1fc" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="1024" Margin="0">
+                <Button Padding="0" Margin="974,5,10,5" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonLogOut_OnClick">
+                    <materialDesign:PackIcon Kind="Power" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Margin="924,5,10,5" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
+                    <materialDesign:PackIcon Kind="Settings" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Margin="874,5,10,5" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
+                    <materialDesign:PackIcon Kind="Notifications" Foreground="Gray"/>
+                </Button>
+                <Image Margin="100,0,0,0" Width="50px" Height="50px"></Image>
+                
+            </Grid>
+        </StackPanel>
+        <Grid Background="#effafc" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
+            <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
+                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                            MouseLeave="MenuElement_OnMouseLeave"
+                            MouseEnter="MenuElement_OnMouseEnter">
+                    <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                </StackPanel>
+                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                            MouseLeave="MenuElement_OnMouseLeave"
+                            MouseEnter="MenuElement_OnMouseEnter">
+                    <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                </StackPanel>
+                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                            MouseLeave="MenuElement_OnMouseLeave"
+                            MouseEnter="MenuElement_OnMouseEnter">
+                    <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                </StackPanel>
+                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                            MouseLeave="MenuElement_OnMouseLeave"
+                            MouseEnter="MenuElement_OnMouseEnter">
+                    <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                </StackPanel>
+                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                            MouseLeave="MenuElement_OnMouseLeave"
+                            MouseEnter="MenuElement_OnMouseEnter">
+                    <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                </StackPanel>
+            </StackPanel>
+            <!--<materialDesign:TransitioningContent x:Name="MenuTransition" 
+                              OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                <Grid Background="Aqua" x:Name="GridCursor" Margin="0,102,0,0" Width="10" Height="63" HorizontalAlignment="Left"
+                      VerticalAlignment="Top"/>
+            </materialDesign:TransitioningContent>
+            <ListView x:Name="ListViewMenu" Margin="-2, 100, 0, 0" Background="Transparent" BorderBrush="{x:Null}">
+                <ListBoxItem Height="62" Width="250" Margin="0, -2, 0, 0" MouseDown="ListBoxItemMain_OnSelected">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Home" Width="30" Height="30"/>
+                        <TextBlock Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    </StackPanel> 
+                </ListBoxItem>
+                <ListBoxItem Height="60" MouseDown="ListBoxItemShop_OnSelected" >
+                    <StackPanel Orientation="Horizontal" MouseDown="ListBoxItemShop_OnSelected">
+                        <materialDesign:PackIcon Kind="Shop" Width="30" Height="30"></materialDesign:PackIcon>
+                        <TextBlock Text="Shop" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30"></materialDesign:PackIcon>
+                        <TextBlock Text="Stores" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Cart" Width="30" Height="30"></materialDesign:PackIcon>
+                        <TextBlock Text="Cart" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="AboutCircle" Width="30" Height="30"></materialDesign:PackIcon>
+                        <TextBlock Text="About" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListView>-->
+        </Grid>
+        <Grid Width="774" Margin="250, 55, 0, 0" Background="Brown"></Grid>
     </Grid>
 </Window>

@@ -1,7 +1,13 @@
 ﻿namespace Shop_Service.ProductFactory
 {
-    public class Appliance : Electronics
+    public class Appliance : Product
     {
-        
+        public Appliance(string name, int price, int rating, int quantity)
+        {
+            this.Name = name;
+            this.Price = price;
+            this.Rating = rating;
+            this.Quantity = quantity;
+        }
     }
 }

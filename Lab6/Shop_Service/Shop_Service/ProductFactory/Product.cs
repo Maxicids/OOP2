@@ -1,10 +1,17 @@
-﻿namespace Shop_Service.ProductFactory
+﻿using System;
+
+namespace Shop_Service.ProductFactory
 {
     public abstract class Product
     {
-        public string Name { get; }
-        public int Price { get; }
-        public int Rating { get; }
-        public int Quantity { get; }
+        protected string Name { get; set; }
+        protected int Price { get; set;}
+        protected int Rating { get; set;}
+        protected int Quantity { get; set;}
+
+        public override string ToString()
+        {
+            return String.Concat(Name, " ", Price, " ", Rating, " ", Quantity);
+        }
     }
 }
