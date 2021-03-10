@@ -37,18 +37,18 @@ namespace Shop_Service
         
         private void MoveCursorMenu(int index)
         {
-            //MenuTransition.OnApplyTemplate();
-            //GridCursor.Margin = new Thickness(0, 102 + 64*index,0,0);
+            MenuTransition.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, 100 + 60*index,0,0);
         }
 
         private void ListBoxItemMain_OnSelected(object sender, RoutedEventArgs e)
         {
-            MoveCursorMenu(1);
+            //MoveCursorMenu(1);
         }
 
         private void ListBoxItemShop_OnSelected(object sender, RoutedEventArgs e)
         {
-            MoveCursorMenu(3);
+            //MoveCursorMenu(3);
         }
 
         private void MenuElement_OnMouseEnter(object sender, MouseEventArgs e)
@@ -59,6 +59,7 @@ namespace Shop_Service
         private void MenuElement_OnMouseLeave(object sender, MouseEventArgs e)
         {
             ((StackPanel) sender).Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#effafc"));
+            GridCursor.Background = new SolidColorBrush(Colors.Aqua);
         }
     }
 }
