@@ -36,43 +36,49 @@
             </Grid>
         </StackPanel>
         <Grid Background="#effafc" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
-            <materialDesign:TransitioningContent x:Name="MenuTransition" 
+            <materialDesign:TransitioningContent x:Name="MenuTransition" Canvas.ZIndex="1"
                               OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid Background="Aqua" x:Name="GridCursor" Margin="0,100,0,0" Width="10" Height="63" HorizontalAlignment="Left"
+                <Grid Background="Aqua" x:Name="GridCursor" Margin="0,100,0,0" Width="10" Height="60" HorizontalAlignment="Left"
                       VerticalAlignment="Top"/>
             </materialDesign:TransitioningContent>
             <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
-                            MouseEnter="MenuElement_OnMouseEnter">
+                            MouseEnter="MenuElement_OnMouseEnter"
+                            MouseDown="Main_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Shop" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
-                            MouseEnter="MenuElement_OnMouseEnter">
+                            MouseEnter="MenuElement_OnMouseEnter"
+                            MouseDown="Shop_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="Shop" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
-                            MouseEnter="MenuElement_OnMouseEnter">
+                            MouseEnter="MenuElement_OnMouseEnter"
+                            MouseDown="Stores_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="MapMarker" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="Stores" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
-                            MouseEnter="MenuElement_OnMouseEnter">
+                            MouseEnter="MenuElement_OnMouseEnter"
+                            MouseDown="Cart_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Cart" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="Cart" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250"  
                             Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
-                            MouseEnter="MenuElement_OnMouseEnter">
+                            MouseEnter="MenuElement_OnMouseEnter"
+                            MouseDown="About_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="AboutCircle" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="About" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
+            
             </StackPanel>
             <!--<materialDesign:TransitioningContent x:Name="MenuTransition" 
                               OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">

@@ -40,17 +40,6 @@ namespace Shop_Service
             MenuTransition.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, 100 + 60*index,0,0);
         }
-
-        private void ListBoxItemMain_OnSelected(object sender, RoutedEventArgs e)
-        {
-            //MoveCursorMenu(1);
-        }
-
-        private void ListBoxItemShop_OnSelected(object sender, RoutedEventArgs e)
-        {
-            //MoveCursorMenu(3);
-        }
-
         private void MenuElement_OnMouseEnter(object sender, MouseEventArgs e)
         {
             ((StackPanel) sender).Background = new SolidColorBrush(Colors.LightSteelBlue);
@@ -59,7 +48,33 @@ namespace Shop_Service
         private void MenuElement_OnMouseLeave(object sender, MouseEventArgs e)
         {
             ((StackPanel) sender).Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#effafc"));
+            //GridCursor.
             GridCursor.Background = new SolidColorBrush(Colors.Aqua);
+        }
+
+        private void Main_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveCursorMenu(0);
+        }
+
+        private void Shop_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveCursorMenu(1);
+        }
+
+        private void Stores_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveCursorMenu(2);
+        }
+
+        private void Cart_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveCursorMenu(3);
+        }
+
+        private void About_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveCursorMenu(4);
         }
     }
 }
