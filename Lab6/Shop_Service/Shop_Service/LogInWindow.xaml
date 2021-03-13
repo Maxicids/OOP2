@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="LogInWindow" Height="450" Width="800" WindowStyle="None">
-    <Grid Background="#FFDCEEEE">
+    <Grid Background="#FFDCEEEE" MouseDown="LoginWindow_OnMouseDown">
         <StackPanel>
             <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="792">
                 <Button Padding="0" HorizontalAlignment="Right"
@@ -16,22 +16,20 @@
                 </Button>
             </Grid>
         </StackPanel>
-        <Ellipse Canvas.ZIndex="1" StrokeThickness="10"
-                 Stroke="#FFDCEEEE" Fill="LightBlue" Width="70" Height="70" Margin="596,120,0,122">
-            
-        </Ellipse>
 
-        <Border Width="600" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="15">
-            <Border.Effect>
-                <DropShadowEffect Color="LightGray" ShadowDepth="2"></DropShadowEffect>
-            </Border.Effect>
-            <Grid>
-                <TextBox Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 -25 0 0"></TextBox>
-                <PasswordBox Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 40 0 0"/>
-            </Grid>
-            
-
-
+        <Border Canvas.ZIndex="1" Background="#FFDCEEEE" Width="80" Height="80" CornerRadius="80" Margin="596,0,0,0">
+            <Border Background="#a6e6fc" Width="60" Height="60" CornerRadius="60">
+                <Polygon Canvas.ZIndex="1" Fill="#FFFF9CAB" Points="25,20,25,40,40,30" />
+            </Border>
         </Border>
+        <Rectangle Fill="White" Width="600" VerticalAlignment="Center" Height="170" RadiusX="15" RadiusY="15">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="LightGray" ShadowDepth="2"></DropShadowEffect>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TextBox Background="Transparent" Text="Welcome" FontSize="50" FontFamily="Calibri Bold" TextAlignment="Center"  Width="300" Margin="246,35,246,333" RenderTransformOrigin="0.487,-0.41"/>
+        <TextBox Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 155 0 0"></TextBox>
+        <PasswordBox Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 200 0 0"/>
+        <TextBox BorderBrush="{x:Null}" Background="Transparent" Text="do not have an account? click here" FontSize="10" FontFamily="Calibri Bold" TextAlignment="Center" Margin="146,267,146,136" RenderTransformOrigin="0.487,-0.41"/>
     </Grid>
 </Window>

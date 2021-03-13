@@ -28,5 +28,10 @@ namespace Shop_Service
         {
             Application.Current.Shutdown();
         }
+
+        private void LoginWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
