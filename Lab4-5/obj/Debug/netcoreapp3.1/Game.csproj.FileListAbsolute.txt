@@ -37,3 +37,16 @@ D:\Epam\OOP\Game\Game\obj\Debug\netcoreapp3.1\Game.csproj.CoreCompileInputs.cach
 D:\Epam\OOP\Game\Game\obj\Debug\netcoreapp3.1\Game.dll
 D:\Epam\OOP\Game\Game\obj\Debug\netcoreapp3.1\Game.pdb
 D:\Epam\OOP\Game\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.exe
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.deps.json
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.runtimeconfig.json
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.runtimeconfig.dev.json
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.dll
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\bin\Debug\netcoreapp3.1\Game.pdb
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.csprojAssemblyReference.cache
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.AssemblyInfoInputs.cache
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.AssemblyInfo.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.csproj.CoreCompileInputs.cache
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.dll
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.pdb
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab4-5\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache

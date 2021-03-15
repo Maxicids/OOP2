@@ -13,9 +13,13 @@ namespace Game
     {
         public void HandleInput(MyObject hero, Input input)
         {
-            if (input.GetKey() == "W")
+            if (input.GetKey() == "")
             {
-                hero.ObjectState = new MovingForward();
+                hero.ObjectState = new Staying();
+            }
+            if (input.GetKey() == "Spacebar")
+            {
+                hero.ObjectState = new Jumping();
             }
         }
 
@@ -28,9 +32,13 @@ namespace Game
     {
         public void HandleInput(MyObject hero, Input input)
         {
-            if (input.GetKey() == "Spacebar")
+            if (input.GetKey() == "W")
             {
-                hero.ObjectState = new Jumping();
+                hero.ObjectState = new MovingForward();
+            }
+            if (input.GetKey() == "")
+            {
+                hero.ObjectState = new Staying();
             }
         }
 
@@ -43,9 +51,13 @@ namespace Game
     {
         public void HandleInput(MyObject hero, Input input)
         {
-            if (input.GetKey() == "")
+            if (input.GetKey() == "Spacebar")
             {
-                hero.ObjectState = new Staying();
+                hero.ObjectState = new Jumping();
+            }
+            if (input.GetKey() == "w")
+            {
+                hero.ObjectState = new MovingForward();
             }
         }
 

@@ -1064,7 +1064,7 @@
   },
   "packageFolders": {
     "C:\\Users\\18141\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1076,7 +1076,7 @@
       "outputPath": "D:\\Epam\\OOP\\Repositories\\OOP2\\OOP2\\Lab4-5\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\18141\\AppData\\Roaming\\NuGet\\NuGet.Config",

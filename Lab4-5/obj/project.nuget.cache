@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3B6N1piOJr3ihic/mOgKl4PpjP1HBTfWX2q7F0J9ViIJ9UtNlzgVey3sRnkAjxAcwaFPuhnTXEtNpKMyB6JLcw==",
+  "dgSpecHash": "iGHoIRCNX/+mYulRnamiLavYo8mJ9xZy+by3UFBmixFc0byByN/gfLxjw1ZRt2g4FCDtdMDtpG6tTNGBa0NrQw==",
   "success": true,
   "projectFilePath": "D:\\Epam\\OOP\\Repositories\\OOP2\\OOP2\\Lab4-5\\Game.csproj",
   "expectedPackageFiles": [
@@ -18,10 +18,10 @@
     "C:\\Users\\18141\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\18141\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\18141\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\18141\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\18141\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
     "C:\\Users\\18141\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.12\\microsoft.netcore.app.host.win-x64.3.1.12.nupkg.sha512",
-    "C:\\Users\\18141\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\18141\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\18141\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\18141\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }

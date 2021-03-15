@@ -32,19 +32,4 @@ namespace Game
             Console.WriteLine("Retriating");
         }
     }
-
-    public class Context
-    {
-        public Strategy strategy { get; set; }
-
-        public Context(Strategy strategy)
-        {
-            this.strategy = strategy;
-        }
-
-        public void Execute()
-        {
-            strategy.Execute();
-        }
-    }
 }
