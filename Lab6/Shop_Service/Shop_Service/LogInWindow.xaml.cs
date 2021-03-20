@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Interop;
 
 namespace Shop_Service
 {
@@ -28,10 +21,19 @@ namespace Shop_Service
         {
             Application.Current.Shutdown();
         }
-
         private void LoginWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+
+                DragMove();
+        }
+
+        private void ToRegistration(object sender, MouseButtonEventArgs e)
+        {
+            Hide();
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Top = Top;
+            registrationWindow.Left = Left;
+            registrationWindow.Show();
         }
     }
 }
