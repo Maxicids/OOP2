@@ -1,16 +1,12 @@
-﻿using System;
-
-using System.Windows;
-
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Interop;
 
 namespace Shop_Service
 {
     /// <summary>
     /// Interaction logic for LogInWindow.xaml
     /// </summary>
-    public partial class LogInWindow : Window
+    public partial class LogInWindow
     {
         public LogInWindow()
         {
@@ -30,10 +26,15 @@ namespace Shop_Service
         private void ToRegistration(object sender, MouseButtonEventArgs e)
         {
             Hide();
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Top = Top;
-            registrationWindow.Left = Left;
+            var registrationWindow = new RegistrationWindow {Top = Top, Left = Left};
             registrationWindow.Show();
+        }
+
+        private void Login(object sender, MouseButtonEventArgs e)
+        {
+            Hide();
+            var mainWindow = new MainWindow {Top = Top, Left = Left};
+            mainWindow.Show();
         }
     }
 }

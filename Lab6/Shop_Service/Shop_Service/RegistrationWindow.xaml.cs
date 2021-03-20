@@ -19,5 +19,12 @@ namespace Shop_Service
         {
             Application.Current.Shutdown();
         }
+
+        private void Register(object sender, MouseButtonEventArgs e)
+        {
+            Hide();
+            var mainWindow = new MainWindow {Top = Top, Left = Left};
+            mainWindow.Show();
+        }
     }
 }

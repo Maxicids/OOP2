@@ -17,7 +17,9 @@ namespace Shop_Service
 
         private void ButtonLogOut_OnClick(object sender, RoutedEventArgs e)
         {
-            //Application.Current.Shutdown();
+            Hide();
+            var logInWindow = new LogInWindow() {Top = Top, Left = Left};
+            logInWindow.Show();
         }
 
         private void ButtonOff_OnClick(object sender, RoutedEventArgs e)

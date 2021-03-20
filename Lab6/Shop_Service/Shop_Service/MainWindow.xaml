@@ -9,11 +9,11 @@
     <Grid Background="White" DataContext="hello world" MouseDown="MainGrid_OnMouseDown">
         <StackPanel>
             <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="1024">
-                <Button Padding="0" Margin="999,0,0,0" 
+                <Button Padding="0" Margin="999,-5,0,0" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonOff_OnClick">
                     <materialDesign:PackIcon Kind="Close" Foreground="Gray"/>
                 </Button>
-                <Button Padding="0" Margin="949,0,0,0" 
+                <Button Padding="0" Margin="949,-5,0,0" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonMinimize_OnClick">
                     <materialDesign:PackIcon Kind="WindowMinimize" Foreground="Gray"/>
                 </Button>
@@ -80,43 +80,6 @@
                 </StackPanel>
             
             </StackPanel>
-            <!--<materialDesign:TransitioningContent x:Name="MenuTransition" 
-                              OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid Background="Aqua" x:Name="GridCursor" Margin="0,102,0,0" Width="10" Height="63" HorizontalAlignment="Left"
-                      VerticalAlignment="Top"/>
-            </materialDesign:TransitioningContent>
-            <ListView x:Name="ListViewMenu" Margin="-2, 100, 0, 0" Background="Transparent" BorderBrush="{x:Null}">
-                <ListBoxItem Height="62" Width="250" Margin="0, -2, 0, 0" MouseDown="ListBoxItemMain_OnSelected">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon Kind="Home" Width="30" Height="30"/>
-                        <TextBlock Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
-                    </StackPanel> 
-                </ListBoxItem>
-                <ListBoxItem Height="60" MouseDown="ListBoxItemShop_OnSelected" >
-                    <StackPanel Orientation="Horizontal" MouseDown="ListBoxItemShop_OnSelected">
-                        <materialDesign:PackIcon Kind="Shop" Width="30" Height="30"></materialDesign:PackIcon>
-                        <TextBlock Text="Shop" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30"></materialDesign:PackIcon>
-                        <TextBlock Text="Stores" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Cart" Width="30" Height="30"></materialDesign:PackIcon>
-                        <TextBlock Text="Cart" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AboutCircle" Width="30" Height="30"></materialDesign:PackIcon>
-                        <TextBlock Text="About" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
-                    </StackPanel>
-                </ListBoxItem>
-            </ListView>-->
         </Grid>
         <Grid Width="774" Margin="250, 55, 0, 0" Background="Brown"></Grid>
     </Grid>

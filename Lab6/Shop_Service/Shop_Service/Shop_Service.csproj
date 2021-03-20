@@ -139,7 +139,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RoleFactory\" />
+    <Folder Include="Roles\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MainIcon.png" />

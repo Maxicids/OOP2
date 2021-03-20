@@ -18,7 +18,7 @@
         </StackPanel>
 
         <Border Canvas.ZIndex="1" Background="#FFDCEEEE" Width="80" Height="80" CornerRadius="80" Margin="596,0,0,0">
-            <Border Background="#a6e6fc" Width="60" Height="60" CornerRadius="60">
+            <Border Cursor="Hand" MouseDown="Login" Background="#a6e6fc" Width="60" Height="60" CornerRadius="60">
                 <Polygon Canvas.ZIndex="1" Fill="#FFFF9CAB" Points="25,20,25,40,40,30" />
             </Border>
         </Border>
