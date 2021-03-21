@@ -6,7 +6,7 @@ namespace Game
 {
     class Adapter : ImprovedSwordElf
     {
-        private SwordElf swordElf = new SwordElf();
+        private SwordElf swordElf;
         public Adapter(SwordElf swordElf)
         {
             this.swordElf = swordElf;
