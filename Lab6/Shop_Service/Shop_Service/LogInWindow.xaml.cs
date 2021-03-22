@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Shop_Service.Roles;
 
 namespace Shop_Service
 {
@@ -32,9 +33,18 @@ namespace Shop_Service
 
         private void Login(object sender, MouseButtonEventArgs e)
         {
-            Hide();
-            var mainWindow = new MainWindow {Top = Top, Left = Left};
-            mainWindow.Show();
+            //TbLogin.Text
+            if (Users.GetInstance().VerifyUser(new User(TbLogin.Text, TbPassword.Password)))
+            {
+                Hide();
+                var mainWindow = new MainWindow {Top = Top, Left = Left};
+                mainWindow.Show();
+            }
+            else
+            {
+                //
+            }
+            
         }
     }
 }

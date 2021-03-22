@@ -1,0 +1,10 @@
+[
+{
+"__type":"Admin:#Shop_Service.Roles",
+"Login":"Admin","Password":"Admin"
+}
+{
+"__type":"User:#Shop_Service.Roles",
+"Login":"Maxicids","Password":"1234"
+}
+]

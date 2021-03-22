@@ -29,16 +29,16 @@
         </Rectangle>
         <TextBox Background="Transparent" Text="Welcome" FontSize="50" FontFamily="Calibri Bold" TextAlignment="Center" 
                  Width="300" Margin="246,35,246,333" RenderTransformOrigin="0.487,-0.41"/>
-        <TextBox Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Username" 
+        <TextBox Name="TbLogin" Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Username" 
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 155 0 0"></TextBox>
-        <PasswordBox Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Password"
+        <PasswordBox Name="TbPassword" Width="500" Height="40" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Password"
                      Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 200 0 0"/>
         <StackPanel Cursor="Hand" MouseDown="ToRegistration" Background="Transparent"  Width="240" Height="30" Margin="0, 100, 0, 0"  Canvas.ZIndex="1">
             
         </StackPanel>
         <TextBox BorderBrush="{x:Null}" Background="Transparent"
                      Text="do not have an account? click here" FontSize="10" FontFamily="Calibri Bold" 
-                     TextAlignment="Center" Margin="146,267,146,136" RenderTransformOrigin="0.487,-0.41"/>
+                     TextAlignment="Center" Margin="289,267,289,160" RenderTransformOrigin="0.487,-0.41"/>
         
     </Grid>
 </Window>
