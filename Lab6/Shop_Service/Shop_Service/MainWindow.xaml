@@ -19,6 +19,11 @@
                 </Button>
             </Grid>
             <Grid Background="#cff1fc" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="1024" Margin="0">
+                <Button Padding="0" Margin="30.667,0,932.833,0" Height="35" Cursor="Arrow"
+                        Background="{x:Null}" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Account" Foreground="Gray" Height="29.5" Width="39.5" RenderTransformOrigin="-3.342,0.415"/>
+                </Button>
+                <TextBlock Name="TbAccountName" VerticalAlignment="Center" Text="Name" FontSize="22" Margin="85.5,1.631,763.5,1.631" FontFamily="Calibri Bold"/>
                 <Button Padding="0" Margin="974,5,10,5" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonLogOut_OnClick">
                     <materialDesign:PackIcon Kind="Power" Foreground="Gray"/>
@@ -31,8 +36,6 @@
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
                     <materialDesign:PackIcon Kind="Notifications" Foreground="Gray"/>
                 </Button>
-                <Image Margin="100,0,0,0" Width="50px" Height="50px"></Image>
-                
             </Grid>
         </StackPanel>
         <Grid Background="#effafc" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
@@ -78,9 +81,15 @@
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="AboutCircle" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="About" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-            
+
             </StackPanel>
         </Grid>
-        <Grid Width="774" Margin="250, 55, 0, 0" Background="Brown"></Grid>
+        <Grid Margin="250, 55, 0, 0" Name="ContentGrid" Width="774" VerticalAlignment="Top" Background="#FFE4FAFF" Height="545">
+            
+        </Grid>
+        
+        <!-- <Grid Width="774" VerticalAlignment="Bottom" Height="200"> -->
+        <!--      -->
+        <!-- </Grid> -->
     </Grid>
 </Window>

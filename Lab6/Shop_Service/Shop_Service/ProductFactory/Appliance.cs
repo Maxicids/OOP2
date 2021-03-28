@@ -1,13 +1,16 @@
-﻿namespace Shop_Service.ProductFactory
+﻿using System;
+
+namespace Shop_Service.ProductFactory
 {
+    [Serializable]
     public class Appliance : Product
     {
-        public Appliance(string name, int price, int rating, int quantity)
+        public Appliance(string name, int price, int rating, string description)
         {
             this.Name = name;
             this.Price = price;
             this.Rating = rating;
-            this.Quantity = quantity;
+            this.Description = description;
         }
     }
 }

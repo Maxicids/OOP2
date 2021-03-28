@@ -100,9 +100,17 @@
     <Compile Include="Elements\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Elements\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogInWindow.xaml.cs">
       <DependentUpon>LogInWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductCommand\AddCommand.cs" />
+    <Compile Include="ProductCommand\Command.cs" />
+    <Compile Include="ProductCommand\Invoker.cs" />
+    <Compile Include="ProductCommand\RemoveCommand.cs" />
+    <Compile Include="ProductFactory\ProductList.cs" />
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
@@ -110,13 +118,8 @@
     <Compile Include="Roles\Role.cs" />
     <Compile Include="Roles\User.cs" />
     <Compile Include="Roles\Users.cs" />
-    <Compile Include="ShopWindow.xaml.cs">
-      <DependentUpon>ShopWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StartWindow.xaml.cs">
-      <DependentUpon>StartWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="Elements\ProductView.xaml" />
+    <Page Include="Elements\Shop.xaml" />
     <Page Include="LogInWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,8 +136,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistrationWindow.xaml" />
-    <Page Include="ShopWindow.xaml" />
-    <Page Include="StartWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductFactory\Appliance.cs" />
@@ -162,7 +163,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Roles\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MainIcon.png" />

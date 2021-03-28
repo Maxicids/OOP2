@@ -12,6 +12,19 @@ namespace Shop_Service.Roles
         [DataMember(Name = "Password")]
         protected string password;
 
+        private bool isActive = false;
+
+        public void SetActive()
+        {
+            isActive = true;
+        }
+
+        public bool IsActive
+        {
+            get => isActive;
+            set => isActive = value;
+        }
+
         public string Login => login.GetHashCode().ToString();
 
         public string Password => password.GetHashCode().ToString();
@@ -19,6 +32,11 @@ namespace Shop_Service.Roles
         public bool VerifyRole(string lg, string pw)
         {
             return Password.Equals(pw) && Login.Equals(lg);
+        }
+
+        public override string ToString()
+        {
+            return login;
         }
     }
 }

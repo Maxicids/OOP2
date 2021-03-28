@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Shop_Service"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="LogInWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize">
+        Title="LogInWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Icon="MainIcon.png">
     <Grid Background="#FFDCEEEE" MouseDown="LoginWindow_OnMouseDown">
         <StackPanel>
             <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="800">

@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Json;
-using System.Xml.Serialization;
 
 
 namespace Shop_Service.Roles
@@ -19,21 +18,39 @@ namespace Shop_Service.Roles
             roles = new List<Role>();
             jsonSerializer = new DataContractJsonSerializer(typeof(List<Role>));
         }
+        
+        public static Users GetInstance()
+        {
+            if (instance != null) return instance;
+            
+            instance = new Users();
+            instance.Deserialize();
+            return instance;
+        }
 
         public void Add(Role user)
         {
             roles.Add(user);
         }
-        public bool VerifyUser(Role user)
-        {
-            return roles.Any(role => role.VerifyRole(user.Login, user.Password));
-        }
 
+        public Role Find(string login)
+        {
+            return roles.FirstOrDefault(role => role.ToString() == login);
+        }
         public void Remove(Role user)
         {
             roles.Remove(user);
         }
 
+        public Role GetActive()
+        {
+            return roles.FirstOrDefault(role => role.IsActive);
+        }
+        public bool VerifyUser(Role user)
+        {
+            return roles.Any(role => role.VerifyRole(user.Login, user.Password));
+        }
+        
         #region Serialization
 
         public void Serialize()
@@ -55,16 +72,6 @@ namespace Shop_Service.Roles
                 roles.Add(role);
             }
         }
-
         #endregion
-
-        public static Users GetInstance()
-        {
-            if (instance != null) return instance;
-            
-            instance = new Users();
-            instance.Deserialize();
-            return instance;
-        }
     }
 }

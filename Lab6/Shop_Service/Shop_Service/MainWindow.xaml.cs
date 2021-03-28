@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using Shop_Service.Roles;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Shop_Service.Elements;
 
 namespace Shop_Service
 {
@@ -13,10 +15,13 @@ namespace Shop_Service
         public MainWindow()
         {
             InitializeComponent();
+            var user = Users.GetInstance().GetActive();
+            TbAccountName.Text = user.ToString();
         }
 
         private void ButtonLogOut_OnClick(object sender, RoutedEventArgs e)
         {
+            Users.GetInstance().Find(TbAccountName.Text).IsActive = false;
             Hide();
             var logInWindow = new LogInWindow() {Top = Top, Left = Left};
             logInWindow.Show();
@@ -29,7 +34,7 @@ namespace Shop_Service
 
         private void ButtonMinimize_OnClick(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void MainGrid_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -56,26 +61,32 @@ namespace Shop_Service
 
         private void Main_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            ContentGrid.Children.Clear();
             MoveCursorMenu(0);
         }
 
         private void Shop_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            ContentGrid.Children.Clear();
+            ContentGrid.Children.Add(new Shop());
             MoveCursorMenu(1);
         }
 
         private void Stores_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            ContentGrid.Children.Clear();
             MoveCursorMenu(2);
         }
 
         private void Cart_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            ContentGrid.Children.Clear();
             MoveCursorMenu(3);
         }
 
         private void About_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            ContentGrid.Children.Clear();
             MoveCursorMenu(4);
         }
     }

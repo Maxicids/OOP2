@@ -1,10 +1,23 @@
 [
-{
-"__type":"Admin:#Shop_Service.Roles",
-"Login":"Admin","Password":"Admin"
-}
-{
-"__type":"User:#Shop_Service.Roles",
-"Login":"Maxicids","Password":"1234"
-}
+  
+  {
+    "__type": "Admin:#Shop_Service.Roles",
+    "Login": "Admin",
+    "Password": "Admin"
+  },
+  {
+    "__type": "User:#Shop_Service.Roles",
+    "Login": "Maxicids",
+    "Password": "1234"
+  },
+  {
+    "__type": "User:#Shop_Service.Roles",
+    "Login": "User2",
+    "Password": "1234"
+  },
+  {
+    "__type": "User:#Shop_Service.Roles",
+    "Login": "User3",
+    "Password": "1234"
+  }
 ]

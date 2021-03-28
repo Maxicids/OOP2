@@ -20,8 +20,7 @@ namespace Shop_Service
         }
         private void LoginWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-
-                DragMove();
+            DragMove();
         }
 
         private void ToRegistration(object sender, MouseButtonEventArgs e)
@@ -33,16 +32,18 @@ namespace Shop_Service
 
         private void Login(object sender, MouseButtonEventArgs e)
         {
-            //TbLogin.Text
-            if (Users.GetInstance().VerifyUser(new User(TbLogin.Text, TbPassword.Password)))
+            //TODO: Admin login
+            var users = Users.GetInstance();
+            if (users.VerifyUser(new User(TbLogin.Text, TbPassword.Password)))
             {
+                users.Find(TbLogin.Text).IsActive = true;
                 Hide();
                 var mainWindow = new MainWindow {Top = Top, Left = Left};
                 mainWindow.Show();
             }
             else
             {
-                //
+                //error
             }
             
         }
