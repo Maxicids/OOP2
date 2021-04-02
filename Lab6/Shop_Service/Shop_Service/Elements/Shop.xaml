@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:Shop_Service.Elements"
              mc:Ignorable="d"
              Height="545" Width="774">
-    <Grid Background="#FFE4FAFF">
+    <Grid Background="Transparent">
+        <ScrollViewer Margin="0,50,0,0">
+            <StackPanel CanVerticallyScroll="True" Name="ProductList" 
+                        Background="Transparent" Orientation="Vertical"></StackPanel>
+        </ScrollViewer>
         <Grid Width="774" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="#dbfafc" Width="774" Height="50">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="Transparent" Width="774" Height="50">
                 <ComboBox Margin="340,10,0,0" Width="200" Height="30" VerticalAlignment="Top">
                     <ComboBoxItem IsSelected="True">All</ComboBoxItem>
                     <ComboBoxItem>Smartphones and Tablets</ComboBoxItem>
@@ -16,20 +20,13 @@
                     <ComboBoxItem>Pc's</ComboBoxItem>
                     <ComboBoxItem>Appliances</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Margin="20,10,0,0" Width="200" Height="30" VerticalAlignment="Top">
+                <ComboBox Name="OrderSelector"  SelectionChanged="Order_OnSelected" Margin="20,10,0,0" Width="200" Height="30" VerticalAlignment="Top">
                     <ComboBoxItem IsSelected="True">popular ones first</ComboBoxItem>
                     <ComboBoxItem>cheap ones first</ComboBoxItem>
                     <ComboBoxItem>expensive ones first</ComboBoxItem>
-                    <ComboBoxItem>new ones first</ComboBoxItem>
                 </ComboBox>
                 
             </StackPanel>
         </Grid>
-        
-        <ScrollViewer Margin="0,50,0,0">
-            <StackPanel CanVerticallyScroll="True" Name="ProductList" 
-                        Background="Transparent" Orientation="Vertical"></StackPanel>
-        </ScrollViewer>
-        
     </Grid>
 </UserControl>

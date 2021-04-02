@@ -3,17 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Shop_Service.Elements"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" Height="150" Width="700">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="Product" OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.8}">
+        <materialDesign:TransitioningContent x:Name="Product" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.6}">
             <StackPanel Orientation="Horizontal" Height="120">
                 <Image Panel.ZIndex="1" Width="150" Source="D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Resources\TV.jpeg"/>
                 <StackPanel Orientation="Vertical" Width="541" >
-                    <TextBlock Name="Header"  Height="20" HorizontalAlignment="Center" Text="Header" FontSize="18" FontFamily="Calibri Bold"></TextBlock>
-                    <TextBlock TextWrapping="WrapWithOverflow" Name="Description" Height="74" HorizontalAlignment="Center" Text="Description" FontSize="18" FontFamily="Calibri" Margin="10,0,0,0" Width="531" MaxWidth="531"></TextBlock>
-                    <TextBlock Name="Price"  TextAlignment="Right" Height="25" HorizontalAlignment="Right" Text="Price: 17.99" FontSize="17" FontFamily="Calibri Bold" Margin="10,0,0,0" Width="531"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="2,0,0,0" Height="24">
+                        <TextBlock x:Name="Header" Margin="210, 0, 0, 0"  Height="20" Text="Header" FontSize="18" FontFamily="Calibri Bold" RenderTransformOrigin="3.62,0.5" Width="287.423" />
+                        <materialDesign:PackIcon MouseDown="AddToCart_OnMouseDown" Kind="CartAdd" Width="38" Foreground="Red" Height="24"/>
+                    </StackPanel>
+                    <!--Background="{x:Null}" BorderBrush="{x:Null}"-->
+                    <TextBlock TextWrapping="WrapWithOverflow" Name="Description" Height="71" HorizontalAlignment="Center" Text="Description" FontSize="18" FontFamily="Calibri" Margin="10,0,0,0" Width="531" MaxWidth="531"></TextBlock>
+                    <TextBlock Name="Price" TextAlignment="Right" Height="22" HorizontalAlignment="Right" Text="Price: 17.99" FontSize="17" FontFamily="Calibri Bold" Width="531"/>
                 </StackPanel>
             </StackPanel>
         </materialDesign:TransitioningContent>

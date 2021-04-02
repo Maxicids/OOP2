@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Json;
 
 namespace Shop_Service.ProductFactory
 {
-    public class ProductList
+    public class ProductList : IProductContainer
     {
         private static ProductList instance;
         private List<Product> products;
@@ -24,14 +24,6 @@ namespace Shop_Service.ProductFactory
             
             instance = new ProductList();
             instance.Deserialize();
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy M31", 2450, 5, "Android, экран 6.4 AMOLED (1080x2340), Exynos 9611, ОЗУ 6 ГБ, флэш-память 128 ГБ, карты памяти, камера 64 Мп, аккумулятор 6000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
-            instance.Add(new SmartPhoneOrTablet("Samsung Galaxy A31", 2450, 4, "Android, экран 6.4 AMOLED (1080x2400), Mediatek MT6768 Helio P65, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 48 Мп, аккумулятор 5000 мАч, 2 SIM"));
             return instance;
         }
 
@@ -60,6 +52,7 @@ namespace Shop_Service.ProductFactory
         public void SortByPriceAscending()
         {
             products = products.OrderBy(x => x.Price).ToList();
+            products = products.OrderBy(x => x.Price).ToList();
         }
         public void SortByPriceDescending()
         {
@@ -76,7 +69,7 @@ namespace Shop_Service.ProductFactory
             jsonSerializer.WriteObject(file, products);
         }
         
-        private void Deserialize()
+        public void Deserialize()
         {
             var fileInfo = new FileInfo(JsonPath);
             if (!fileInfo.Exists) return;

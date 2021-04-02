@@ -10,11 +10,16 @@ namespace Shop_Service
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow
     {
+        private bool isSettingsOpened;
+        private Settings settings;
         public MainWindow()
         {
             InitializeComponent();
+            isSettingsOpened = false;
+
             var user = Users.GetInstance().GetActive();
             TbAccountName.Text = user.ToString();
         }
@@ -40,6 +45,9 @@ namespace Shop_Service
         private void MainGrid_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+            if (!isSettingsOpened) return;
+            SettingsGrid.Children.Remove(settings);
+            isSettingsOpened = false;
         }
         
         private void MoveCursorMenu(int index)
@@ -88,6 +96,21 @@ namespace Shop_Service
         {
             ContentGrid.Children.Clear();
             MoveCursorMenu(4);
+        }
+
+        private void ButtonSettings_OnClick(object sender, RoutedEventArgs e)
+        {
+            settings ??= new Settings();
+            if (!isSettingsOpened)
+            {
+                SettingsGrid.Children.Add(settings);
+                isSettingsOpened = true;
+            }
+            else
+            {
+                SettingsGrid.Children.Remove(settings);
+                isSettingsOpened = false;
+            }
         }
     }
 }

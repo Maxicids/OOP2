@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 using Shop_Service.ProductFactory;
 
 namespace Shop_Service.Elements
@@ -11,6 +12,11 @@ namespace Shop_Service.Elements
             Header.Text = product.Name;
             Description.Text = "\t" + product.Description;
             Price.Text = "Price: " + product.Price.ToString();
+        }
+
+        private void AddToCart_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

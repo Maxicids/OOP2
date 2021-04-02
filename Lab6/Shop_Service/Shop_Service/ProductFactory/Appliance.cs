@@ -5,7 +5,7 @@ namespace Shop_Service.ProductFactory
     [Serializable]
     public class Appliance : Product
     {
-        public Appliance(string name, int price, int rating, string description)
+        internal Appliance(string name, int price, int rating, string description)
         {
             this.Name = name;
             this.Price = price;

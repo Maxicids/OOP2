@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Shop_Service.MainWindow"
         mc:Ignorable="d"
         Title="" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="MainIcon.png">
-    <Grid Background="White" DataContext="hello world" MouseDown="MainGrid_OnMouseDown">
+    <Grid ZIndex="1" Background="White" Name="MainGrid" MouseDown="MainGrid_OnMouseDown">
         <StackPanel>
             <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="1024">
                 <Button Padding="0" Margin="999,-5,0,0" 
@@ -28,7 +28,7 @@
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonLogOut_OnClick">
                     <materialDesign:PackIcon Kind="Power" Foreground="Gray"/>
                 </Button>
-                <Button Padding="0" Margin="924,5,10,5" 
+                <Button Padding="0" Margin="924,5,10,5" Click="ButtonSettings_OnClick"
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
                     <materialDesign:PackIcon Kind="Settings" Foreground="Gray"/>
                 </Button>
@@ -39,7 +39,7 @@
             </Grid>
         </StackPanel>
         <Grid Background="#effafc" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
-            <materialDesign:TransitioningContent x:Name="MenuTransition" Canvas.ZIndex="1"
+            <materialDesign:TransitioningContent x:Name="MenuTransition" Canvas.ZIndex="2"
                               OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid Background="Aqua" x:Name="GridCursor" Margin="0,100,0,0" Width="10" Height="60" HorizontalAlignment="Left"
                       VerticalAlignment="Top"/>
@@ -84,12 +84,11 @@
 
             </StackPanel>
         </Grid>
-        <Grid Margin="250, 55, 0, 0" Name="ContentGrid" Width="774" VerticalAlignment="Top" Background="#FFE4FAFF" Height="545">
-            
-        </Grid>
         
-        <!-- <Grid Width="774" VerticalAlignment="Bottom" Height="200"> -->
-        <!--      -->
-        <!-- </Grid> -->
+        <Grid Margin="250, 55, 0, 0" Name="ContentGrid" Width="774"
+              VerticalAlignment="Top" Background="white" Height="545"></Grid>
+        
+        <Grid Name="SettingsGrid" ZIndex="0" Background="Transparent" 
+              Height="145" Width="100" Margin="914,55,10,395"></Grid>
     </Grid>
 </Window>

@@ -1,8 +1,11 @@
-﻿namespace Shop_Service.ProductFactory
+﻿using System;
+
+namespace Shop_Service.ProductFactory
 {
+    [Serializable]
     public class SmartPhoneOrTablet : Product
     {
-        public SmartPhoneOrTablet(string name, int price, int rating, string description)
+        internal SmartPhoneOrTablet(string name, int price, int rating, string description)
         {
             this.Name = name;
             this.Price = price;

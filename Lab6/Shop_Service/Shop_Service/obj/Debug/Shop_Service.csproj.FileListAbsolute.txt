@@ -60,3 +60,14 @@ D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Regi
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\bin\Debug\System.Reflection.TypeExtensions.dll
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Shop.g.cs
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Shop.baml
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Settings.g.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Settings.baml
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\bin\Debug\en\Shop_Service.resources.dll
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Cart.g.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Cart.baml
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.Properties.Langs.Lang.resources
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.Properties.Langs.Lang.ru_RU.resources
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Shop_Service.Properties.Langs.Lang.en.resources
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\en\Shop_Service.resources.dll
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\AddProduct.g.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\AddProduct.baml
