@@ -6,7 +6,7 @@ namespace Shop_Service.ProductFactory
     public class Cart : IProductContainer
     {
         private static Cart instance;
-        private List<Product> products;
+        private readonly List<Product> products;
         private readonly DataContractJsonSerializer jsonSerializer;
         private const string JsonPath = "JsonCart.json";
 
@@ -23,6 +23,10 @@ namespace Shop_Service.ProductFactory
             instance = new Cart();
             instance.Deserialize();
             return instance;
+        }
+        public IEnumerable<Product> GetProductsList()
+        {
+            return products;
         }
 
         #region Commands

@@ -1,4 +1,5 @@
-﻿using Shop_Service.Roles;
+﻿using System;
+using Shop_Service.Roles;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -6,24 +7,21 @@ using System.Windows.Media;
 using Shop_Service.Elements;
 
 namespace Shop_Service
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    
+{ 
     public partial class MainWindow
     {
         private bool isSettingsOpened;
-        private Settings settings;
+        private bool isEnglish;
+        //private Settings settings;
         public MainWindow()
         {
             InitializeComponent();
             isSettingsOpened = false;
+            isEnglish = true;
 
             var user = Users.GetInstance().GetActive();
             TbAccountName.Text = user.ToString();
         }
-
         private void ButtonLogOut_OnClick(object sender, RoutedEventArgs e)
         {
             Users.GetInstance().Find(TbAccountName.Text).IsActive = false;
@@ -46,7 +44,7 @@ namespace Shop_Service
         {
             DragMove();
             if (!isSettingsOpened) return;
-            SettingsGrid.Children.Remove(settings);
+            //SettingsGrid.Children.Remove(settings);
             isSettingsOpened = false;
         }
         
@@ -83,6 +81,7 @@ namespace Shop_Service
         private void Stores_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             ContentGrid.Children.Clear();
+            ContentGrid.Children.Add(new ObservCards());
             MoveCursorMenu(2);
         }
 
@@ -100,17 +99,27 @@ namespace Shop_Service
 
         private void ButtonSettings_OnClick(object sender, RoutedEventArgs e)
         {
-            settings ??= new Settings();
-            if (!isSettingsOpened)
+            if (isEnglish)
             {
-                SettingsGrid.Children.Add(settings);
-                isSettingsOpened = true;
+                Resources.MergedDictionaries.Clear();
+                Resources.MergedDictionaries.Add (new ResourceDictionary()
+                {
+                    Source = new Uri(
+                        @"D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Properties\Langs\language.ru-RU.xaml")
+                });
+                isEnglish = false;
             }
             else
             {
-                SettingsGrid.Children.Remove(settings);
-                isSettingsOpened = false;
+                Resources.MergedDictionaries.Clear();
+                Resources.MergedDictionaries.Add (new ResourceDictionary()
+                {
+                    Source = new Uri(
+                        @"D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Properties\Langs\language.en.xaml")
+                });
+                isEnglish = true;
             }
+            
         }
     }
 }

@@ -1,12 +1,34 @@
-﻿<UserControl x:Class="Shop_Service.Elements.AddProduct"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Shop_Service.Elements"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+﻿<Window x:Class="Shop_Service.Elements.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="250" Width="500" ResizeMode="NoResize" WindowStyle="None">
+    <materialDesign:TransitioningContent 
+        OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.5}">
         
-    </Grid>
-</UserControl>
+        <Border Height="250" Width="500" CornerRadius="10" Background="AntiqueWhite">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Height="200" Orientation="Vertical">
+                    <TextBox Name="TbName" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Name" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    
+                    <TextBox Name="TbDescription" Width="400" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Description"
+                             TextWrapping="WrapWithOverflow" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <TextBox Name="TbPrice" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Price" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <TextBox Name="TbRating" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Rating" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                </StackPanel> 
+                <StackPanel Orientation="Horizontal" Background="Transparent" Height="50">
+                    <materialDesign:PackIcon Cursor="Hand" Margin="400,0,0,0" Kind="CloseBox" Foreground="Red"
+                                             Width="30" Height="30" VerticalAlignment="Center" MouseDown="Cancel_OnMouseDown"/>
+                    <materialDesign:PackIcon Cursor="Hand" Margin="20,0,0,0" Kind="CheckBox" Foreground="Green"
+                                             Width="30" Height="30" VerticalAlignment="Center" MouseDown="Save_OnMouseDown"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </materialDesign:TransitioningContent>
+</Window>

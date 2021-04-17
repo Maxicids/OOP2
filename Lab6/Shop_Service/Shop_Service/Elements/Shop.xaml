@@ -3,17 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Shop_Service.Elements"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              Height="545" Width="774">
-    <Grid Background="Transparent">
+    <Grid Background="Transparent" ZIndex="3" >
         <ScrollViewer Margin="0,50,0,0">
             <StackPanel CanVerticallyScroll="True" Name="ProductList" 
                         Background="Transparent" Orientation="Vertical"></StackPanel>
         </ScrollViewer>
         <Grid Width="774" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="Transparent" Width="774" Height="50">
-                <ComboBox Margin="340,10,0,0" Width="200" Height="30" VerticalAlignment="Top">
+                <materialDesign:PackIcon Name="AddIcon" Margin="0,10,0,0" Cursor="Hand" 
+                                         Kind="PlusBox" Width="38" Foreground="Gray" Height="24" MouseDown="AddProduct_OnMouseDown"/>
+                <!-- <materialDesign:PackIcon Margin="0,10,0,0" Cursor="Hand" -->
+                <!--                          Kind="MinusBox" Width="38" Foreground="Gray" Height="24"/> -->
+                <ComboBox Name="CategorySelector" SelectionChanged="Category_OnSelectionChanged" Margin="280,10,0,0" Width="200" Height="30" VerticalAlignment="Top">
                     <ComboBoxItem IsSelected="True">All</ComboBoxItem>
                     <ComboBoxItem>Smartphones and Tablets</ComboBoxItem>
                     <ComboBoxItem>Laptops</ComboBoxItem>
@@ -25,7 +29,6 @@
                     <ComboBoxItem>cheap ones first</ComboBoxItem>
                     <ComboBoxItem>expensive ones first</ComboBoxItem>
                 </ComboBox>
-                
             </StackPanel>
         </Grid>
     </Grid>

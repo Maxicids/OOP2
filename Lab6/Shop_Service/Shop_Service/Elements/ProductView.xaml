@@ -11,10 +11,17 @@
                 <Image Panel.ZIndex="1" Width="150" Source="D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Resources\TV.jpeg"/>
                 <StackPanel Orientation="Vertical" Width="541" >
                     <StackPanel Orientation="Horizontal" Margin="2,0,0,0" Height="24">
-                        <TextBlock x:Name="Header" Margin="210, 0, 0, 0"  Height="20" Text="Header" FontSize="18" FontFamily="Calibri Bold" RenderTransformOrigin="3.62,0.5" Width="287.423" />
-                        <materialDesign:PackIcon MouseDown="AddToCart_OnMouseDown" Kind="CartAdd" Width="38" Foreground="Red" Height="24"/>
+                        <TextBlock x:Name="Header" Margin="145, 0, 0, 0"  Height="20" Text="Header" FontSize="18" FontFamily="Calibri Bold" RenderTransformOrigin="3.62,0.5" Width="287.423" />
+                        <Grid Name="EditButton" Width="38" Cursor="Hand" MouseDown="EditButton_OnMouseDown">
+                            <materialDesign:PackIcon Cursor="Hand" Kind="EditOutline" Width="38" Foreground="Gray" Height="24"/>
+                        </Grid>
+                        <Grid Width="38" Cursor="Hand" MouseDown="RemoveIcon_OnMouseDown">
+                            <materialDesign:PackIcon Cursor="Hand" Kind="TrashOutline" Width="38" Foreground="Gray" Height="24"/>
+                        </Grid>
+                        <Grid Width="38" Cursor="Hand" MouseDown="AddToCart_OnMouseDown">
+                            <materialDesign:PackIcon Name="CartIcon" Cursor="Hand" Kind="CartAdd" Width="38" Foreground="Red" Height="24"/>
+                        </Grid>
                     </StackPanel>
-                    <!--Background="{x:Null}" BorderBrush="{x:Null}"-->
                     <TextBlock TextWrapping="WrapWithOverflow" Name="Description" Height="71" HorizontalAlignment="Center" Text="Description" FontSize="18" FontFamily="Calibri" Margin="10,0,0,0" Width="531" MaxWidth="531"></TextBlock>
                     <TextBlock Name="Price" TextAlignment="Right" Height="22" HorizontalAlignment="Right" Text="Price: 17.99" FontSize="17" FontFamily="Calibri Bold" Width="531"/>
                 </StackPanel>

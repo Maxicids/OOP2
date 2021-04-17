@@ -15,7 +15,7 @@ namespace Shop_Service.ProductFactory
         [DataMember(Name = "Price")]
         public int Price { get; set;}
 
-        [DataMember(Name = "Rating")]
+        [DataMember(Name = "Rating")] 
         private int rating;
         public int Rating
         {
@@ -34,7 +34,7 @@ namespace Shop_Service.ProductFactory
 
         public override string ToString()
         {
-            return String.Concat(Name, " ", Price, " ", Rating, " ", Description);
+            return string.Concat(Name, " ", Price, " ", Rating, " ", Description);
         }
     }
 }

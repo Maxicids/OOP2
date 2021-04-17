@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\App.xaml
-8234127545
-
-351146186739
+12-1816566593
+21141694479
+392074583415
 21-55522693
-Elements\AddProduct.xaml;Elements\Cart.xaml;Elements\ProductView.xaml;Elements\Settings.xaml;Elements\Shop.xaml;LogInWindow.xaml;MainWindow.xaml;RegistrationWindow.xaml;
+Elements\AddProduct.xaml;Elements\Cart.xaml;Elements\EditProduct.xaml;Elements\ObservCards.xaml;Elements\ProductView.xaml;Elements\ProductViewInCart.xaml;Elements\Settings.xaml;Elements\Shop.xaml;Elements\Shop1.xaml;LogInWindow.xaml;MainWindow.xaml;RegistrationWindow.xaml;
 
 False
 

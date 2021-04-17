@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Shop_Service.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        x:Class="Shop_Service.MainWindow"
         mc:Ignorable="d"
         Title="" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="MainIcon.png">
     <Grid ZIndex="1" Background="White" Name="MainGrid" MouseDown="MainGrid_OnMouseDown">
@@ -28,7 +29,7 @@
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonLogOut_OnClick">
                     <materialDesign:PackIcon Kind="Power" Foreground="Gray"/>
                 </Button>
-                <Button Padding="0" Margin="924,5,10,5" Click="ButtonSettings_OnClick"
+                <Button Name="SettingButton" Padding="0" Margin="924,5,10,5" Click="ButtonSettings_OnClick"
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
                     <materialDesign:PackIcon Kind="Settings" Foreground="Gray"/>
                 </Button>
@@ -50,28 +51,28 @@
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Main_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Shop" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="Main" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource main}"   FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Shop_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="Shop" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource shop}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Stores_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="MapMarker" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="Stores" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource stores}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Cart_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Cart" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="Cart" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource cart}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
                 <StackPanel Height="60" Width="250"  
                             Orientation="Horizontal" HorizontalAlignment="Left"
@@ -79,16 +80,16 @@
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="About_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="AboutCircle" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="About" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource about}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
 
             </StackPanel>
         </Grid>
         
         <Grid Margin="250, 55, 0, 0" Name="ContentGrid" Width="774"
-              VerticalAlignment="Top" Background="white" Height="545"></Grid>
+              VerticalAlignment="Top" Background="White" Height="545"></Grid>
         
-        <Grid Name="SettingsGrid" ZIndex="0" Background="Transparent" 
-              Height="145" Width="100" Margin="914,55,10,395"></Grid>
+        <!-- <Grid Name="SettingsGrid" ZIndex="0" Background="Transparent"  -->
+        <!--       Height="145" Width="100" Margin="914,55,10,395"></Grid> -->
     </Grid>
 </Window>
