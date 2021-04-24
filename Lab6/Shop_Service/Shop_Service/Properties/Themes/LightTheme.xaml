@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF_Shop"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <SolidColorBrush x:Key="Header1" Color="#a6e6fc"/>
+    <SolidColorBrush x:Key="Header2" Color="#cff1fc"/>
+    <SolidColorBrush x:Key="MainGrid" Color="#effafc"/>
+</ResourceDictionary>

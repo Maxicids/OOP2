@@ -75,3 +75,6 @@ D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elem
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Shop1.baml
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\ObservCards.g.cs
 D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Shop1.g.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Card.baml
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\Elements\Card.g.cs
+D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\obj\Debug\GeneratedInternalTypeHelper.g.cs

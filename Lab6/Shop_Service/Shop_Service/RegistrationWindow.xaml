@@ -6,10 +6,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Shop_Service"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Icon="MainIcon.png">
-    <Grid Background="#FFDCEEEE" MouseDown="RegistrationWindow_OnMouseDown">
+        Title="RegistrationWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="CanResize" Icon="MainIcon.png">
+    <Grid Name="RegisterGrid" Background="#FFDCEEEE" MouseDown="RegistrationWindow_OnMouseDown">
         <StackPanel>
-            <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="800">
+            <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="{Binding ElementName=RegisterGrid, Path=ActualWidth}">
                 <Button Name="CloseButton" Padding="0" HorizontalAlignment="Right" Margin="0, -5, 0, 0"
                         Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonClose_OnClick" Width="20"> 
                     <materialDesign:PackIcon Kind="Close" Foreground="Gray"/>
@@ -22,7 +22,7 @@
                 <Polygon Canvas.ZIndex="1" Fill="#FFFF9CAB" Points="25,20,25,40,40,30" />
             </Border>
         </Border>
-        <Rectangle Fill="White" Width="600" VerticalAlignment="Center" Height="210" RadiusX="15" RadiusY="15">
+        <Rectangle Fill="White" MinWidth="400" MaxWidth="600" VerticalAlignment="Center" Height="210" RadiusX="15" RadiusY="15">
             <Rectangle.Effect>
                 <DropShadowEffect Color="LightGray" ShadowDepth="2"></DropShadowEffect>
             </Rectangle.Effect>

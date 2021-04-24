@@ -3,160 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:elements="clr-namespace:Shop_Service.Elements"
              mc:Ignorable="d"
              Height="545" Width="774"
 >
     <Grid HorizontalAlignment="Stretch">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>  
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-       
         <ListBox x:Name="ShoppingCardsList" 
-                  Grid.Row="0" 
-            Grid.Column="0"
-            Grid.ColumnSpan="10" 
-            Grid.RowSpan="6"  
-                 HorizontalAlignment="Stretch"
-                 
-                 >
-            <ListBox.ItemTemplate
-                >
-
+                 Grid.RowSpan="6"  
+                 HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
                 <HierarchicalDataTemplate >
-
-                    <Grid HorizontalAlignment="Center" MaxWidth="690px" Margin="20">
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                 
-                        <Image            
-            Grid.Row="1" 
-            Grid.Column="0"
-            Grid.ColumnSpan="2" 
-            Grid.RowSpan="7"            
-            MinWidth="100px"
-            MaxWidth="170px"
-            MaxHeight="170px"
-            Margin="5px"
-                            
-            Source="{Binding Path=Name}"
-            
-        />
-
-           <TextBlock
-            Grid.Row="1" 
-            Grid.Column="5"
-            Grid.ColumnSpan="9" 
-            Grid.RowSpan="1" 
-            
-            TextAlignment="Center"
-            FontSize="14pt"
-            FontWeight="Bold"
-            
-            
-            Background="Transparent"
-            Foreground="#FF313131"
-            Text="{Binding Path=Price}" IsEnabled="False"
-        />
-
-            <TextBlock
-            Text="{Binding Path=Description}"
-            
-            Grid.Row="3" 
-            Grid.Column="4"
-            Grid.ColumnSpan="12" 
-            Grid.RowSpan="4" 
-            MaxWidth="500px"
-            Padding="35px 5px"
-           
-            TextAlignment="Justify"
-            FontSize="9pt"
-            FontWeight="Normal"
-            
-            Margin="5"
-            TextWrapping="Wrap"
-            Background="Transparent"
-            Foreground="gray"
-            />
-
-             <TextBlock
-            Grid.Row="8" 
-            Grid.Column="11"
-            Grid.ColumnSpan="1" 
-            Grid.RowSpan="1" 
-            
-            VerticalAlignment="Center"
-            TextAlignment="Center"
-            FontSize="12pt"
-            FontWeight="Bold"
-            
-                   
-            HorizontalAlignment="Right"
-            Background="Transparent"
-            Foreground="#FF313131"
-            Text="{Binding Path=Price}"
-            />
-
-             <TextBlock
-            Grid.Row="8" 
-            Grid.Column="12"
-            Grid.ColumnSpan="1" 
-            Grid.RowSpan="1" 
-            
-            VerticalAlignment="Center"
-            TextAlignment="Center"
-            FontSize="12pt"
-            FontWeight="Bold"
-            Background="Transparent"
-            Foreground="#FF313131"
-            HorizontalAlignment="Left"
-            Text="{Binding Path=Rating}"
-            />
-                    </Grid>
-                    
+                    <elements:Card/>
                 </HierarchicalDataTemplate>
          </ListBox.ItemTemplate>
         </ListBox>

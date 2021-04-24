@@ -1,12 +1,13 @@
-﻿using Shop_Service.ProductFactory;
+﻿using System;
+using Shop_Service.ProductFactory;
 
 namespace Shop_Service.ProductCommand
 {
     public class RemoveCommand : Command
     {
         private readonly ProductList receiver;
-        private readonly Product product;
-        public RemoveCommand(Product product)
+        private readonly string product;
+        public RemoveCommand(string product)
         {
             receiver = ProductList.GetInstance();
             this.product = product;
@@ -14,6 +15,7 @@ namespace Shop_Service.ProductCommand
         public override void Execute()
         {
             receiver.Remove(product);
+            MainWindow.appHistory.AddState(receiver.GetProductsList());
         }
     }
 }

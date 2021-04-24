@@ -10,5 +10,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/langs/language.en.xaml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/langs/language.ru-ru.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/themes/darktheme.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("properties/themes/lighttheme.xaml")]
 
 

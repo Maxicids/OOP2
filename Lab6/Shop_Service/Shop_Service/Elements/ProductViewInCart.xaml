@@ -4,26 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" Height="180" Width="700">
+             xmlns:elements="clr-namespace:Shop_Service.Elements"
+             mc:Ignorable="d" Height="600" Width="500">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="elements:MyCommands.Exit" Executed="Exit_Executed"/>
+    </UserControl.CommandBindings>
     <Grid>
-        <materialDesign:TransitioningContent x:Name="Product" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.6}">
+        <Border VerticalAlignment="Top" Height="600" Width="500" CornerRadius="10" Background="AntiqueWhite">
             <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal" Height="120" VerticalAlignment="Top">
-                    <Image Panel.ZIndex="1" Width="150" Source="D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Resources\TV.jpeg"/>
-                    <StackPanel Orientation="Vertical" Width="541" >
-                        <StackPanel Orientation="Horizontal" Margin="2,0,0,0" Height="24">
-                            <TextBlock x:Name="Header" Margin="210, 0, 0, 0"  Height="20" Text="Header" FontSize="18" FontFamily="Calibri Bold" RenderTransformOrigin="3.62,0.5" Width="287.423" />
-                        </StackPanel>
-                        <TextBlock TextWrapping="WrapWithOverflow" Name="Description" Height="71" HorizontalAlignment="Center" Text="Description" FontSize="18" FontFamily="Calibri" Margin="10,0,0,0" Width="531" MaxWidth="531"></TextBlock>
-                        <TextBlock Name="Price" TextAlignment="Right" Height="22" HorizontalAlignment="Right" Text="Price: 17.99" FontSize="17" FontFamily="Calibri Bold" Width="531"/>
-                    </StackPanel>
+                <StackPanel Height="200" Orientation="Vertical">
+                    <TextBox Text="{Binding  Path=NameTextBlockText}" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Name" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <TextBox Text="{Binding  Path=DescriptionTextBlockText}" Width="400" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Description"
+                             TextWrapping="WrapWithOverflow" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <TextBox Text="{Binding  Path=PriceTextBlockText}" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Price" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <TextBox Text="{Binding  Path=RatingTextBlockText}" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Rating" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                </StackPanel> 
+                <StackPanel PreviewMouseDown="Button_OnMouseDown" Orientation="Horizontal">
+                    <Button Width="80" Height="50" MouseDown="Button_OnMouseDown" Margin="10" Background="Aqua">
+                        <Ellipse Width="30" Height="30" Fill="Red" MouseDown="Button_OnMouseDown" />
+                    </Button>
+                    <Button Width="80" Height="50" PreviewMouseDown="Button_OnMouseDown" Margin="10" Background="Aqua">
+                        <Ellipse Width="30" Height="30" Fill="Red" PreviewMouseDown="Button_OnMouseDown" />
+                    </Button>
                 </StackPanel>
-                <Border HorizontalAlignment="Left" Width="40" Height="40" BorderBrush="Gray" BorderThickness="2" CornerRadius="10" Background="Transparent">
-                    <Grid Width="38" Cursor="Hand" VerticalAlignment="Center">
-                        <materialDesign:PackIcon Name="CartIcon" Cursor="Hand" Kind="TrashCanOutline" Width="38" Foreground="Gray" Height="24"/>
-                    </Grid>
-                </Border>
-            </StackPanel>
-        </materialDesign:TransitioningContent>
+                
+                <StackPanel Orientation="Horizontal" Background="Transparent" Height="50">
+                    <materialDesign:PackIcon Cursor="Hand" Margin="400,-100,0,0" Kind="CloseBox" Foreground="Red"
+                                             Width="30" Height="30" VerticalAlignment="Center"/>
+                    <Button Name="Save" Margin="0,-100,0,0" Foreground="Transparent" Background="Transparent" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon  Cursor="Hand" Kind="CheckBox" Foreground="Green"
+                                                 Width="30" Height="30" VerticalAlignment="Center"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock x:Name="textBlock1" Padding="10" />
+                <Button Command="elements:MyCommands.Exit">Exit</Button>
+                </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

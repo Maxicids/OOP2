@@ -31,10 +31,10 @@ namespace Shop_Service.Elements
 
         private void RemoveIcon_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            invoker ??= new Invoker();
-            var command = new RemoveCommand(inspectedProduct);
-            invoker.SetCommand(command);
-            invoker.Run();
+            // invoker ??= new Invoker();
+            // var command = new RemoveCommand(inspectedProduct);
+            // invoker.SetCommand(command);
+            // invoker.Run();
         }
 
         private void EditButton_OnMouseDown(object sender, MouseButtonEventArgs e)

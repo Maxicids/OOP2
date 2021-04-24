@@ -5,22 +5,30 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Shop_Service.Elements;
+using Shop_Service.ProductFactory;
+using Shop_Service.UndoRedo;
+using Cart = Shop_Service.Elements.Cart;
 
 namespace Shop_Service
 { 
     public partial class MainWindow
     {
+        public static AppHistory appHistory = new AppHistory(ProductList.GetInstance().GetProductsList());
         private bool isSettingsOpened;
         private bool isEnglish;
-        //private Settings settings;
+        private bool isLight;
+        private ObservCards observCards = new ObservCards();
         public MainWindow()
         {
             InitializeComponent();
             isSettingsOpened = false;
             isEnglish = true;
+            isLight = true;
 
             var user = Users.GetInstance().GetActive();
             TbAccountName.Text = user.ToString();
+            this.Cursor =
+                new Cursor(@"D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Resources\arrow.cur");
         }
         private void ButtonLogOut_OnClick(object sender, RoutedEventArgs e)
         {
@@ -81,13 +89,14 @@ namespace Shop_Service
         private void Stores_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             ContentGrid.Children.Clear();
-            ContentGrid.Children.Add(new ObservCards());
+            ContentGrid.Children.Add(observCards);
             MoveCursorMenu(2);
         }
 
         private void Cart_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             ContentGrid.Children.Clear();
+            ContentGrid.Children.Add(new Cart());
             MoveCursorMenu(3);
         }
 
@@ -120,6 +129,46 @@ namespace Shop_Service
                 isEnglish = true;
             }
             
+        }
+
+        private void ChangeTheme_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (isLight)
+            {
+                Resources.MergedDictionaries.Clear();
+                Resources.MergedDictionaries.Add (new ResourceDictionary()
+                {
+                    Source = new Uri(
+                        @"D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Properties\Themes\DarkTheme.xaml")
+                });
+                isLight = false;
+            }
+            else
+            {
+                Resources.MergedDictionaries.Clear();
+                Resources.MergedDictionaries.Add (new ResourceDictionary()
+                {
+                    Source = new Uri(
+                        @"D:\Epam\OOP\Repositories\OOP2\OOP2\Lab6\Shop_Service\Shop_Service\Properties\Themes\LightTheme.xaml")
+                });
+                isLight = true;
+            }
+        }
+
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+            object nullCheck = appHistory.Undo();
+            if (nullCheck == null) return;
+            ProductList.GetInstance().SetProductsList(((Memento) nullCheck).productState);
+            observCards.Update();
+        }
+
+        private void Forward_OnClick(object sender, RoutedEventArgs e)
+        {
+            object nullCheck = appHistory.Redo();
+            if (nullCheck == null) return;
+            ProductList.GetInstance().SetProductsList(((Memento) nullCheck).productState);
+            observCards.Update();
         }
     }
 }

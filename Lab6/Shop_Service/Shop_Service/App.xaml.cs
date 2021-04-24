@@ -4,24 +4,16 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 
-
 namespace Shop_Service
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+     public enum Skin { Light, Dark }
     public partial class App : Application
     {
+        public static Skin Skin { get; set; } = Skin.Light;
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();
-
-        public static List<CultureInfo> Languages 
-        {
-            get 
-            {
-                return m_Languages;
-            }
-        }
-
         public App()
         {
             m_Languages.Clear();

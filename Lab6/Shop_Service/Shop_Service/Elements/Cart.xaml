@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Shop_Service.Elements"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              Height="545" Width="774">
     <Grid>
@@ -11,6 +12,9 @@
             <StackPanel Height="50" Orientation="Horizontal" Background="Red">
                 <TextBlock FontSize="32" Text="Shopping Cart" FontFamily="Calibri Bold"></TextBlock>
             </StackPanel>
+            <local:ProductViewInCart x:Name="AddProductView"></local:ProductViewInCart>
+            <materialDesign:PackIcon Cursor="Hand" Margin="20,0,0,0" Kind="CheckBox" Foreground="Green"
+                                     Width="30" Height="30" VerticalAlignment="Center" MouseDown="Save_OnMouseDown"/>
         </StackPanel>
     </Grid>
 </UserControl>

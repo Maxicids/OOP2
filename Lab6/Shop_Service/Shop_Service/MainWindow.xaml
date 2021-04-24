@@ -7,9 +7,78 @@
         x:Class="Shop_Service.MainWindow"
         mc:Ignorable="d"
         Title="" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="MainIcon.png">
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <Border CornerRadius="25"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    Height="{TemplateBinding Height}"
+                    Width="{TemplateBinding Width}" >
+                <ContentControl Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding Content}" />
+            </Border>
+        </ControlTemplate>
+        <Style x:Key="MenuButton">
+            <Setter Property="Control.Height" Value="60" />
+            <Setter Property="Control.Width" Value="250" />
+            <Setter Property="Control.HorizontalAlignment" Value="Left" />
+        </Style>
+        <Style x:Key="AboutStyle" TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="Height" Value="60" />
+                <Setter Property="Width" Value="250" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsEnabled" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Height" Value="150" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CartButton" TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="Height" Value="60" />
+                <Setter Property="Width" Value="250" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style.Setters>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=CartPanelTrigger, Path=IsMouseOver}"
+                             Value="False">
+                    <Setter Property="Background" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="MainButton" TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="Height" Value="60" />
+                <Setter Property="Width" Value="250" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:1" To="80" AutoReverse="True" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid ZIndex="1" Background="White" Name="MainGrid" MouseDown="MainGrid_OnMouseDown">
         <StackPanel>
-            <Grid Background="#a6e6fc" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="1024">
+            <Grid Background="{DynamicResource Header1}" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="1024">
                 <Button Padding="0" Margin="999,-5,0,0" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonOff_OnClick">
                     <materialDesign:PackIcon Kind="Close" Foreground="Gray"/>
@@ -19,70 +88,80 @@
                     <materialDesign:PackIcon Kind="WindowMinimize" Foreground="Gray"/>
                 </Button>
             </Grid>
-            <Grid Background="#cff1fc" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="1024" Margin="0">
+            <Grid Background="{DynamicResource Header2}" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="1024" Margin="0">
                 <Button Padding="0" Margin="30.667,0,932.833,0" Height="35" Cursor="Arrow"
                         Background="{x:Null}" BorderBrush="{x:Null}">
                     <materialDesign:PackIcon Kind="Account" Foreground="Gray" Height="29.5" Width="39.5" RenderTransformOrigin="-3.342,0.415"/>
                 </Button>
                 <TextBlock Name="TbAccountName" VerticalAlignment="Center" Text="Name" FontSize="22" Margin="85.5,1.631,763.5,1.631" FontFamily="Calibri Bold"/>
+                <Button Padding="0" Margin="180,1.631,763.5,1.631" Click="Back_OnClick"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25" >
+                    <materialDesign:PackIcon Kind="ArrowBack" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Margin="230,1.631,763.5,1.631" Click="Forward_OnClick"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25" >
+                    <materialDesign:PackIcon Kind="ArrowForward" Foreground="Gray"/>
+                </Button>
                 <Button Padding="0" Margin="974,5,10,5" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Click="ButtonLogOut_OnClick">
                     <materialDesign:PackIcon Kind="Power" Foreground="Gray"/>
                 </Button>
                 <Button Name="SettingButton" Padding="0" Margin="924,5,10,5" Click="ButtonSettings_OnClick"
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
-                    <materialDesign:PackIcon Kind="Settings" Foreground="Gray"/>
+                    <materialDesign:PackIcon Kind="Language" Foreground="Gray"/>
                 </Button>
                 <Button Padding="0" Margin="874,5,10,5" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
-                    <materialDesign:PackIcon Kind="Notifications" Foreground="Gray"/>
+                    <materialDesign:PackIcon Name="NotificationButton" Kind="Notifications" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Margin="824,5,10,5" Click="ChangeTheme_OnClick"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Width="25">
+                    <materialDesign:PackIcon Kind="ThemeLightDark" Foreground="Gray"/>
                 </Button>
             </Grid>
         </StackPanel>
-        <Grid Background="#effafc" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
+        <Grid Background="{DynamicResource MainGrid}" Width="250" HorizontalAlignment="Left" Margin="0,55,0,0">
             <materialDesign:TransitioningContent x:Name="MenuTransition" Canvas.ZIndex="2"
                               OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid Background="Aqua" x:Name="GridCursor" Margin="0,100,0,0" Width="10" Height="60" HorizontalAlignment="Left"
                       VerticalAlignment="Top"/>
             </materialDesign:TransitioningContent>
             <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
-                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                <StackPanel Style="{StaticResource MainButton}" Orientation="Horizontal" 
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Main_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Shop" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="{DynamicResource main}"   FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                <StackPanel Style="{StaticResource MenuButton}" Orientation="Horizontal" 
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Shop_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="{DynamicResource shop}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                <StackPanel Style="{StaticResource MenuButton}" Orientation="Horizontal" 
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Stores_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="MapMarker" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="{DynamicResource stores}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-                <StackPanel Height="60" Width="250" Orientation="Horizontal" HorizontalAlignment="Left"
+                <StackPanel  Style="{StaticResource CartButton}" Orientation="Horizontal"
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="Cart_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="Cart" Width="30" Height="30" VerticalAlignment="Center"/>
-                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource cart}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
+                    <TextBlock Name="CartPanelTrigger" VerticalAlignment="Center" Text="{DynamicResource cart}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-                <StackPanel Height="60" Width="250"  
-                            Orientation="Horizontal" HorizontalAlignment="Left"
+                <StackPanel Style="{StaticResource AboutStyle}" Orientation="Horizontal"
                             MouseLeave="MenuElement_OnMouseLeave"
                             MouseEnter="MenuElement_OnMouseEnter"
                             MouseDown="About_OnMouseDown">
                     <materialDesign:PackIcon Margin="20,0,0,0" Kind="AboutCircle" Width="30" Height="30" VerticalAlignment="Center"/>
                     <TextBlock VerticalAlignment="Center" Text="{DynamicResource about}" FontSize="26" Margin="10, 0, 0, 0" FontFamily="Calibri Bold"/>
                 </StackPanel>
-
             </StackPanel>
         </Grid>
         

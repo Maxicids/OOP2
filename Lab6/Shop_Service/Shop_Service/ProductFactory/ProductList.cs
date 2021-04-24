@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Json;
 
 namespace Shop_Service.ProductFactory
 {
-    public class ProductList : IProductContainer
+    public class ProductList
     {
         private static ProductList instance;
-        private List<Product> products;
+        private ObservableCollection<Product> products;
         private readonly DataContractJsonSerializer jsonSerializer;
         private const string JsonPath = "JsonProducts.json";
 
         private ProductList()
         {
-            products = new List<Product>();
+            products = new ObservableCollection<Product>();
             jsonSerializer = new DataContractJsonSerializer(typeof(List<Product>));
         }
         
@@ -27,9 +28,13 @@ namespace Shop_Service.ProductFactory
             return instance;
         }
 
-        public IEnumerable<Product> GetProductsList()
+        public ObservableCollection<Product> GetProductsList()
         {
             return products;
+        }
+        public void SetProductsList(ObservableCollection<Product> productsCollection)
+        {
+            this.products = productsCollection;
         }
 
         #region Commands
@@ -39,24 +44,24 @@ namespace Shop_Service.ProductFactory
             products.Add(product);
         }
 
-        public void Remove(Product product)
+        public void Remove(string name)
         {
-            products.Remove(product);
+            products.Remove(products.FirstOrDefault(x => x.Name == name));
         }
 
         public void SortByPopularity()
         {
-            products = products.OrderBy(x => x.Rating).ToList();
+            products = new ObservableCollection<Product>(products.OrderBy(x => x.Rating).ToList()) ;
         }
 
         public void SortByPriceAscending()
         {
-            products = products.OrderBy(x => x.Price).ToList();
-            products = products.OrderBy(x => x.Price).ToList();
+            products = new ObservableCollection<Product>(products.OrderBy(x => x.Price).ToList());
+            products = new ObservableCollection<Product>(products.OrderBy(x => x.Price).ToList());
         }
         public void SortByPriceDescending()
         {
-            products = products.OrderByDescending(x => x.Price).ToList();
+            products = new ObservableCollection<Product>(products.OrderByDescending(x => x.Price).ToList());
         }
 
         #endregion
@@ -69,7 +74,7 @@ namespace Shop_Service.ProductFactory
             jsonSerializer.WriteObject(file, products);
         }
         
-        public void Deserialize()
+        private void Deserialize()
         {
             var fileInfo = new FileInfo(JsonPath);
             if (!fileInfo.Exists) return;
