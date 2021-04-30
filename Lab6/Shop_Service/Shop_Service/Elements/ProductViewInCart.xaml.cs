@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 //using System.Windows.Controls;
@@ -104,10 +103,13 @@ namespace Shop_Service.Elements
         }
         private void Button_OnMouseDown(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("sender: " + sender.ToString() + "\n"+ "source: " + e.Source.ToString() + "\n\n")
-            ;
+            MessageBox.Show("sender: " + sender + "\n"+ "source: " + e.Source + "\n\n");
         }
 
+        public void Exit_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
         public void Exit_Executed(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -115,7 +117,8 @@ namespace Shop_Service.Elements
     }
     public class MyCommands
     {
-        private static readonly RoutedUICommand exit = new RoutedUICommand();
+        private static readonly RoutedUICommand exit = new RoutedUICommand("Exit", "Exit", typeof(ProductViewInCart),
+            new InputGestureCollection() {new KeyGesture(Key.Escape)});
 
         public static RoutedUICommand Exit => exit;
     }

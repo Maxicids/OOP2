@@ -7,7 +7,7 @@
              xmlns:elements="clr-namespace:Shop_Service.Elements"
              mc:Ignorable="d" Height="600" Width="500">
     <UserControl.CommandBindings>
-        <CommandBinding Command="elements:MyCommands.Exit" Executed="Exit_Executed"/>
+        <CommandBinding Command="elements:MyCommands.Exit" Executed="Exit_Executed" CanExecute="Exit_CanExecute"/>
     </UserControl.CommandBindings>
     <Grid>
         <Border VerticalAlignment="Top" Height="600" Width="500" CornerRadius="10" Background="AntiqueWhite">
@@ -23,14 +23,13 @@
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                 </StackPanel> 
                 <StackPanel PreviewMouseDown="Button_OnMouseDown" Orientation="Horizontal">
-                    <Button Width="80" Height="50" MouseDown="Button_OnMouseDown" Margin="10" Background="Aqua">
-                        <Ellipse Width="30" Height="30" Fill="Red" MouseDown="Button_OnMouseDown" />
-                    </Button>
                     <Button Width="80" Height="50" PreviewMouseDown="Button_OnMouseDown" Margin="10" Background="Aqua">
                         <Ellipse Width="30" Height="30" Fill="Red" PreviewMouseDown="Button_OnMouseDown" />
                     </Button>
                 </StackPanel>
-                
+                <StackPanel Width="80" Height="50" MouseDown="Button_OnMouseDown" Margin="10" Background="Aqua">
+                    <Ellipse Width="30" Height="30" Fill="Red" MouseDown="Button_OnMouseDown" />
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" Background="Transparent" Height="50">
                     <materialDesign:PackIcon Cursor="Hand" Margin="400,-100,0,0" Kind="CloseBox" Foreground="Red"
                                              Width="30" Height="30" VerticalAlignment="Center"/>

@@ -3,11 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lab10"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="489" Width="1000">
     <Grid>
-        <TextBox VerticalAlignment="Top" Name="Result" Background="Aqua" Height="50"></TextBox>
-        <Button Height="30" Click="Connect_OnClick">Get connection</Button>
+        <StackPanel Orientation="Vertical">
+            <DataGrid  HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" 
+                       Width="1000" AutoGenerateColumns="True" Name="Users"></DataGrid>
+            <StackPanel Orientation="Horizontal" Background="Gray" Height="50">
+                <Button Margin="300, 10, 10, 10" Height="30" Width="80" Click="Connect_OnClick">Get</Button>
+                <Button Name="Add" Margin="10" Height="30" Width="80" 
+                        Click="Add_OnClick">Add</Button>
+                <Button Name="Update" Margin="10" Height="30" Width="80" 
+                        Click="Update_OnClick">Update</Button>
+                <Button Name="Delete" Margin="10" Height="30" Width="80" 
+                        Click="Delete_OnClick">Delete</Button>
+                <Button Padding="0" Width="25" Click="Left_OnClick" >
+                    <materialDesign:PackIcon Kind="ArrowBack" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Width="25" >
+                    <materialDesign:PackIcon Kind="ArrowUp" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Width="25" >
+                    <materialDesign:PackIcon Kind="ArrowDown" Foreground="Gray"/>
+                </Button>
+                <Button Padding="0" Width="25" >
+                    <materialDesign:PackIcon Kind="ArrowForward" Foreground="Gray"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -50,7 +50,7 @@ namespace Shop_Service
 
         private void MainGrid_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            //DragMove();
             if (!isSettingsOpened) return;
             //SettingsGrid.Children.Remove(settings);
             isSettingsOpened = false;

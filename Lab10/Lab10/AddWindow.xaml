@@ -1,0 +1,28 @@
+﻿<Window x:Class="Lab10.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Lab10"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="300" Width="500">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Height="200" Orientation="Vertical">
+                <TextBox Name="TbName" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Login" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name="TbPassword" Width="400" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Password" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name="TbDescription" Width="400" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Description"
+                         TextWrapping="WrapWithOverflow" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+            </StackPanel> 
+            <StackPanel Orientation="Horizontal" Background="Transparent" Height="50">
+                <materialDesign:PackIcon Cursor="Hand" Margin="380,0,0,0" Kind="CloseBox" Foreground="Red" MouseDown="Cancel_OnMouseDown"
+                                         Width="30" Height="30" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Cursor="Hand" Margin="20,0,0,0" Kind="CheckBox" Foreground="Green" MouseDown="Add_OnMouseDown"
+                                         Width="30" Height="30" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

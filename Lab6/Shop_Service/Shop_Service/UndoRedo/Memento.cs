@@ -14,7 +14,7 @@ namespace Shop_Service.UndoRedo
 
    public class AppHistory
     {
-        ObservableCollection<Memento> states;
+        private readonly ObservableCollection<Memento> states;
         private int currentStateId;
         public AppHistory(ObservableCollection<Product> products)
         {
