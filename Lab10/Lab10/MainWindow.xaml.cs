@@ -1,7 +1,8 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Data.SqlClient;
 using Lab10.DB;
 
 namespace Lab10
@@ -14,7 +15,6 @@ namespace Lab10
             InitializeComponent();
             var connectionProvider = ConnectionProvider.GetInstance();
             connection = connectionProvider.GetConnection();
-            connection.Open();
             Connect_OnClick(this, new RoutedEventArgs());
         }
 
@@ -41,6 +41,31 @@ namespace Lab10
         private void Update_OnClick(object sender, RoutedEventArgs e)
         {
             
+            for (var i = 0; i < Users.Items.Count - 1; i++)
+            {
+                var transaction = connection.BeginTransaction();
+                var command = connection.CreateCommand();
+                command.Transaction = transaction;
+                
+                var id = Convert.ToInt32((Users.Columns[0].GetCellContent(Users.Items[i]) as TextBlock)?.Text);
+                var loginUpdate = $"update Users set login = '{(Users.Columns[1].GetCellContent(Users.Items[i]) as TextBlock)?.Text}' where id = {id} ";
+                var passwordUpdate = $"update Users set password = '{(Users.Columns[2].GetCellContent(Users.Items[i]) as TextBlock)?.Text}' where id = {id} ";
+                var descriptionUpdate = $"update Users set description = '{(Users.Columns[4].GetCellContent(Users.Items[i]) as TextBlock)?.Text}' where id = {id} ";
+                try
+                {
+                    command.CommandText = loginUpdate;
+                    command.ExecuteNonQuery();
+                    command.CommandText = passwordUpdate;
+                    command.ExecuteNonQuery();
+                    command.CommandText = descriptionUpdate;
+                    command.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch(Exception exception)
+                {
+                    transaction.Rollback();
+                }
+            }
         }
 
         private void Delete_OnClick(object sender, RoutedEventArgs e)
@@ -52,9 +77,9 @@ namespace Lab10
             Connect_OnClick(this, new RoutedEventArgs());
         }
 
-        private void Left_OnClick(object sender, RoutedEventArgs e)
-        {
-            Users.SelectedIndex--;
-        }
+        // private void Left_OnClick(object sender, RoutedEventArgs e)
+        // {
+        //     //Users.SelectedIndex--;
+        // }
     }
 }

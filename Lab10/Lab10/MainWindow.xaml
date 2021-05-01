@@ -5,31 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="489" Width="1000">
+        Title="MainWindow" Height="489" Width="970">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <DataGrid  HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" 
-                       Width="1000" AutoGenerateColumns="True" Name="Users"></DataGrid>
+            <DataGrid HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" 
+                      Width="1000" AutoGenerateColumns="False" Name="Users">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id}" Header="ID" Width="50" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding login}" Header="Login" Width="70"/>
+                    <DataGridTextColumn Binding="{Binding password}" Header="Password" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding role}" IsReadOnly="True" Header="Role" Width="70"/>
+                    <DataGridTextColumn Binding="{Binding description}" Header="Description" Width="120"/>
+                    <DataGridTextColumn Binding="{Binding settings, ValidatesOnExceptions=True}" IsReadOnly="True" Header="Settings id" Width="100"/>
+                    <DataGridTemplateColumn Header="Profile Picture" Width="120" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding profile_Picture}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Binding="{Binding is_Online}" Header="is_Online" Width="80"/>
+                    <DataGridCheckBoxColumn Binding="{Binding is_Blocked}" Header="is_Blocked" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding created_At}" IsReadOnly="True" Header="created_At" Width="160"/>
+                </DataGrid.Columns>
+            </DataGrid>
             <StackPanel Orientation="Horizontal" Background="Gray" Height="50">
-                <Button Margin="300, 10, 10, 10" Height="30" Width="80" Click="Connect_OnClick">Get</Button>
+                <Button Margin="280, 10, 10, 10" Height="30" Width="80" Click="Connect_OnClick">Get</Button>
                 <Button Name="Add" Margin="10" Height="30" Width="80" 
                         Click="Add_OnClick">Add</Button>
                 <Button Name="Update" Margin="10" Height="30" Width="80" 
                         Click="Update_OnClick">Update</Button>
                 <Button Name="Delete" Margin="10" Height="30" Width="80" 
                         Click="Delete_OnClick">Delete</Button>
-                <Button Padding="0" Width="25" Click="Left_OnClick" >
-                    <materialDesign:PackIcon Kind="ArrowBack" Foreground="Gray"/>
-                </Button>
-                <Button Padding="0" Width="25" >
-                    <materialDesign:PackIcon Kind="ArrowUp" Foreground="Gray"/>
-                </Button>
-                <Button Padding="0" Width="25" >
-                    <materialDesign:PackIcon Kind="ArrowDown" Foreground="Gray"/>
-                </Button>
-                <Button Padding="0" Width="25" >
-                    <materialDesign:PackIcon Kind="ArrowForward" Foreground="Gray"/>
-                </Button>
+                <!-- <Button Padding="0" Width="25" Click="Left_OnClick" > -->
+                <!--     <materialDesign:PackIcon Kind="ArrowBack" Foreground="Gray"/> -->
+                <!-- </Button> -->
+                <!-- <Button Padding="0" Width="25" > -->
+                <!--     <materialDesign:PackIcon Kind="ArrowUp" Foreground="Gray"/> -->
+                <!-- </Button> -->
+                <!-- <Button Padding="0" Width="25" > -->
+                <!--     <materialDesign:PackIcon Kind="ArrowDown" Foreground="Gray"/> -->
+                <!-- </Button> -->
+                <!-- <Button Padding="0" Width="25" > -->
+                <!--     <materialDesign:PackIcon Kind="ArrowForward" Foreground="Gray"/> -->
+                <!-- </Button> -->
             </StackPanel>
         </StackPanel>
     </Grid>
